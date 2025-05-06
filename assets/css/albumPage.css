@@ -1,0 +1,51 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Circular";
+  src: url(../fonts/CircularStd-Medium.otf);
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+  margin: 0;
+}
+
+#center {
+  background: linear-gradient(#debf50, #000000);
+  padding-top: 1.5rem;
+}
+
+#playId {
+  display: inline-block;
+  vertical-align: -0.125em;
+  fill: #1ed760;
+  object-fit: cover;
+  background-color: #000000;
+  border-radius: 100%;
+  border-color: #1ed760;
+}
+
+#list-bg {
+  background: linear-gradient(#5b4f20, #000000);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#accountId,
+.dropdown-menu,
+.dropdown-item {
+  background-color: #000000ca;
+  padding: 2px;
+  border-radius: 5px;
+  color: white;
+}
+#accountId {
+  border-radius: 20px;
+}
+
+#leftArrow,
+#rightArrow {
+  max-width: 100%;
+}
