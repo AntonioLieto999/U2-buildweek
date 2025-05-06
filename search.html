@@ -2,18 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify Clone - Search</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <img src="assets\imgs\logo.svg" alt="Spotify Clone Logo" class="logo" />
-    <a href="assets\imgs\logo.svg" target="HOME">Home</a>
-    <header>
-      <input type="text" id="searchInput" placeholder="Cerca un artista o una canzone..." />
-      <button id="searchBtn">Cerca</button>
+  <header>
+        <img src="./assets/imgs/logo.svg" alt="Spotify Logo" class="logo" />
+      </header>
+   <nav class="navbar">
+        <ul>
+          <li><button type="button" class="btn btn-dark"></button></li>
+
+            <li><button type="button" class="btn btn-link">Link</button></li>
+     
+          <li><a href="search.html" class="active">Search</a></li>
+        
+        </ul>   
+        
+      <h1>Search</h1>
     </header>
-    <main id="resultsContainer"></main>
+
+    <main>
+      <section class="search-bar">
+        <input type="text" id="searchInput" placeholder="Cerca un artista, album o canzone..." />
+        <button id="searchBtn">Cerca</button>
+      </section>
+
+      <section id="resultsContainer" class="results-grid">
+        <div id="results"></div>
+      </section>
+    </main>
 
     <script src="search.js"></script>
   </body>

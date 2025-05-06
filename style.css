@@ -7,15 +7,27 @@ body {
 }
 
 .logo {
-  background-color: white;
-  width: 220px;
-  margin-right: 20px;
+  font-display: swap;
+  color: white;
+
+  height: 50px;
+  margin: 10px auto;
+  display: block;
 }
 
 header {
   display: flex;
   padding: 20px;
-  background-color: #38b363;
+  background-color: #1e1e1e;
+}
+
+ul,
+li {
+  justify-content: center;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 #searchInput {
@@ -34,7 +46,7 @@ header {
 
 #resultsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
 }
