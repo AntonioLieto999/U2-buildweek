@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  background-color: white;
+  width: 220px;
+  margin-right: 20px;
+}
+
+header {
+  display: flex;
+  padding: 20px;
+  background-color: #38b363;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 1em;
+}
+
+#searchBtn {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#resultsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.result-card {
+  background-color: #282828;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result-card img {
+  width: 100%;
+  border-radius: 4px;
+}
