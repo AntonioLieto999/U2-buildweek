@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>U2-W2-build week</title>
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
@@ -12,30 +16,32 @@
     />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
   </head>
-  <body>
+  <body style="background-color: #202020">
     <main class="container-fluid">
       <div class="row">
         <aside class="col-3 d-none d-md-block bg-black vh-100 overflow-hidden">
           <div class="pt-2 ps-1">
-            <a href="#"><i class="fs-3 text-light"></i></a>
+            <a href="#"><i class="bi bi-three-dots fs-3 text-light"></i></a>
           </div>
           <section class="p-0">
             <nav>
               <ul class="d-flex flex-column gap-2 list-unstyled">
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0">Home</a>
+                  <a href="#" class="link-underline link-underline-opacity-0"
+                    ><i class="bi bi-house-door-fill fs-5 p-2"></i> Home</a
+                  >
                 </li>
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0">
-                    <span>Cerca</span></a
+                  <a href="#" class="link-underline link-underline-opacity-0" id="searchIcon">
+                    <i class="bi bi-search fs-5 p-2"></i><span id="spanSearch"> Cerca</span></a
                   >
-                  <div class="ps-2 d-none d-inline-block">
+                  <div id="searchInputWrapper" class="ps-2 d-none d-inline-block">
                     <div class="d-flex gap-3 align-items-center w-100">
                       <input
-                        id="inputCerca"
+                        id="inputSearch"
                         type="text"
                         class="form-control bg-dark text-white p-1 border-0"
-                        placeholder="Film, genere, ecc..."
+                        placeholder="Film, genere..."
                       />
                       <button id="searchButton" class="btn btn-dark text-white rounded-3 p-1 px-2">
                         Cerca
@@ -44,7 +50,9 @@
                   </div>
                 </li>
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0">La tua libreria</a>
+                  <a href="#" class="link-underline link-underline-opacity-0"
+                    ><i class="bi bi-collection fs-5 p-2"></i> La tua libreria</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -53,15 +61,25 @@
             <nav>
               <ul class="d-flex flex-column gap-2 list-unstyled">
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0"> Crea playlist</a>
-                </li>
-                <li>
                   <a href="#" class="link-underline link-underline-opacity-0"
-                    ><span>Brani che ti piacciono</span></a
+                    ><i class="bi bi-plus-square-fill fs-5 p-2"></i> Crea playlist</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0">I tuoi episodi</a>
+                  <a href="#" class="link-underline link-underline-opacity-0"
+                    ><span class="rounded-1 d-inline-block" id="heart-colored"
+                      ><i class="bi bi-heart-fill fs-5 p-2"></i
+                    ></span>
+                    Brani che ti piacciono</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="link-underline link-underline-opacity-0"
+                    ><span class="rounded-1 d-inline-block" id="green-bookmark"
+                      ><i class="bi bi-bookmark-fill fs-5 p-2"></i
+                    ></span>
+                    I tuoi episodi</a
+                  >
                 </li>
               </ul>
             </nav>
@@ -80,9 +98,27 @@
         >
           <!--Navbar-->
           <div class="row pt-2 justify-content-between pb-3" id="navbar">
-            <div class="col-3 d-flex align-items-center"></div>
-            <div class="col-9 d-flex justify-content-end align-items-center pe-3">
-              <button class="fs-4 border-0 me-3 d-none d-sm-block" id="buttonIscriviti">
+            <div class="col-3 d-flex align-items-center">
+              <button
+                class="text-white-50 rounded-circle border-0 d-flex justify-content-center align-items-center me-2"
+                style="background-color: #131313; width: 40px; height: 40px"
+              >
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button
+                id="backButton"
+                class="text-white-50 rounded-circle border-0 d-flex justify-content-center align-items-center"
+                style="background-color: #131313; width: 40px; height: 40px"
+              >
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+            <div class="col-9 d-flex justify-content-end align-items-center pe-3" id="col9">
+              <button
+                class="text-white-50 fs-4 border-0 me-3 d-none d-sm-block"
+                style="background-color: #202020"
+                id="buttonIscriviti"
+              >
                 Iscriviti
               </button>
               <div class="dropdown" id="buttonAccedi">
@@ -95,7 +131,7 @@
                 >
                   Accedi
                 </button>
-                <form class="dropdown-menu p-4" style="width: 350px">
+                <form class="dropdown-menu p-4" style="width: 300px">
                   <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
                     <input
@@ -114,8 +150,36 @@
                       placeholder="Password"
                     />
                   </div>
-                  <button type="submit" class="btn bg-dark text-white">Login</button>
+                  <button
+                    type="submit"
+                    class="btn bg-dark text-white"
+                    onclick="event.preventDefault(); login();"
+                  >
+                    Login
+                  </button>
                 </form>
+              </div>
+              <div class="btn-group d-none" id="buttonLogged">
+                <button
+                  class="bg-black d-flex flex-row text-white rounded-5 border-0 me-3"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="./assets/imgs/search/image-31.jpg"
+                    alt="immagine profile"
+                    class="rounded-circle"
+                    style="width: 20px"
+                  />
+                  <p class="mb-0 ms-2 text-white">Lidia Nautilus</p>
+                  <i class="bi bi-caret-down-fill fs-6"></i>
+                </button>
+                <ul class="dropdown-menu bg-dark">
+                  <li><a class="dropdown-item text-white hover" href="#">Account</a></li>
+                  <li><a class="dropdown-item text-white hover" href="#">Profilo</a></li>
+                  <li><a class="dropdown-item text-white hover" href="#">Impostazioni</a></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -126,18 +190,21 @@
               <div>
                 <img src="" style="width: 200px" id="imgMainAlbum" />
               </div>
-              <div id="randomAlbum">
-                <!--Dinamicamente generato-->
+              <div class="text-white" id="randomAlbum">
+                <!--Generato dinamicamente-->
               </div>
             </div>
           </div>
 
           <div class="row px-4">
             <div class="col-12">
-              <!--prima row di card -->
-              <div class="row flex-column gap-2 flex-lg-row mb-4 ms-1">
-                <!--prima card -->
-                <div class="col d-flex flex-row align-items-center me-3">
+              <h4 class="text-white" id="saluto"></h4>
+            </div>
+            <div class="col-12">
+              <!--prima row di card piccole-->
+              <div class="first-line-cards row flex-column gap-2 flex-lg-row mb-4 ms-1">
+                <!--prima card piccola-->
+                <div class="col d-flex flex-row align-items-center bgLittleCard me-3">
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-1.jpg" style="width: 30px; height: 30px" />
@@ -150,13 +217,13 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <p class="mb-0">Prima card</p>
+                      <p class="text-white mb-0">early stage emily syndrome</p>
                     </div>
                   </div>
                 </div>
 
-                <!--seconda card -->
-                <div class="col d-flex flex-row align-items-center me-3">
+                <!--seconda card piccola-->
+                <div class="col d-flex flex-row align-items-center bgLittleCard me-3">
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-5.jpg" style="width: 30px; height: 30px" />
@@ -169,13 +236,13 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <p class="mb-0">Seconda card</p>
+                      <p class="text-white mb-0">Be The Young</p>
                     </div>
                   </div>
                 </div>
 
-                <!--terza card -->
-                <div class="col d-flex flex-row align-items-center me-3">
+                <!--terza card piccola-->
+                <div class="col d-flex flex-row align-items-center bgLittleCard me-3">
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-9.jpg" style="width: 30px; height: 30px" />
@@ -197,16 +264,16 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <p class="mb-0">Terza card</p>
+                      <p class="text-white mb-0">saggio vibes</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!--seconda row di card -->
-              <div class="row flex-column gap-2 flex-lg-row mb-4 ms-1">
-                <!--prima card riga 2-->
-                <div class="col d-flex flex-row align-items-center me-3">
+              <!--seconda row di card piccole-->
+              <div class="second-line-cards row flex-column gap-2 flex-lg-row mb-4 ms-1">
+                <!--prima card piccola-->
+                <div class="col d-flex flex-row align-items-center bgLittleCard me-3">
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
                       <img
@@ -217,13 +284,13 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <p class="mb-0">Quarta card</p>
+                      <p class="text-white mb-0">Brani che ti piacciono</p>
                     </div>
                   </div>
                 </div>
 
-                <!--seconda card riga 2-->
-                <div class="col d-flex flex-row align-items-center me-3">
+                <!--seconda card piccola-->
+                <div class="col d-flex flex-row align-items-center bgLittleCard me-3">
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
                       <img
@@ -248,13 +315,13 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <p class="mb-0">Quinta card</p>
+                      <p class="text-white mb-0">2021 lol</p>
                     </div>
                   </div>
                 </div>
 
-                <!--terza card riga 2-->
-                <div class="col d-flex flex-row align-items-center me-3">
+                <!--terza card piccola-->
+                <div class="col d-flex flex-row align-items-center bgLittleCard me-3">
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
                       <img
@@ -265,7 +332,7 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <p class="mb-0">Sesta card</p>
+                      <p class="text-white mb-0">Depp dive with Ali Abdaal</p>
                     </div>
                   </div>
                 </div>
@@ -274,7 +341,7 @@
               <!--row degli album dinamici-->
               <div class="row mb-5">
                 <div class="col-12">
-                  <h4>Altro di ciò che ti piace</h4>
+                  <h4 class="text-white">Altro di ciò che ti piace</h4>
                 </div>
                 <div class="col-12">
                   <div
@@ -288,39 +355,43 @@
 
           <footer class="mb-5 pb-4">
             <div
-              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 mx-2 border-bottom"
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 text-white mx-2 border-bottom"
             >
               <div class="col mb-4">
                 <p>Azienda</p>
                 <ul class="list-group list-unstyled gap-2">
-                  <li><a href="#" class="text-decoration-none">Chi siamo</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Chi siamo</a></li>
                   <li>
-                    <a href="#" class="text-decoration-none">Opportunità di lavoro</a>
+                    <a href="#" class="text-white-50 text-decoration-none">Opportunità di lavoro</a>
                   </li>
-                  <li><a href="#" class="text-decoration-none">For the record</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">For the record</a></li>
                 </ul>
               </div>
 
               <div class="col mb-4">
                 <p>Community</p>
                 <ul class="list-group list-unstyled gap-2">
-                  <li><a href="#" class="text-decoration-none">Per artisti</a></li>
-                  <li><a href="#" class="text-decoration-none">Sviluppatori</a></li>
-                  <li><a href="#" class="text-decoration-none">Pubblicità</a></li>
-                  <li><a href="#" class="text-decoration-none">Investitori</a></li>
-                  <li><a href="#" class="text-decoration-none">Venditori</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Per artisti</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Sviluppatori</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Pubblicità</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Investitori</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Venditori</a></li>
                 </ul>
               </div>
 
               <div class="col mb-4">
                 <p>Link utili</p>
                 <ul class="list-group list-unstyled gap-2">
-                  <li><a href="#" class="text-decoration-none">Assistenza</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Assistenza</a></li>
                   <li>
-                    <a href="#" class="text-decoration-none">App per cellulare gratuita</a>
+                    <a href="#" class="text-white-50 text-decoration-none"
+                      >App per cellulare gratuita</a
+                    >
                   </li>
                   <li>
-                    <a href="#" class="text-decoration-none">Dritti del consumatore</a>
+                    <a href="#" class="text-white-50 text-decoration-none"
+                      >Dritti del consumatore</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -329,21 +400,33 @@
                 <p>Piani spotify</p>
                 <ul class="list-group list-unstyled gap-2">
                   <li>
-                    <a href="#" class="text-decoration-none">Premium Individual</a>
+                    <a href="#" class="text-white-50 text-decoration-none">Premium Individual</a>
                   </li>
-                  <li><a href="#" class="text-decoration-none">Premium Duo</a></li>
-                  <li><a href="#" class="text-decoration-none">Premium Family</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Premium Duo</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Premium Family</a></li>
                   <li>
-                    <a href="#" class="text-decoration-none">Premium Student</a>
+                    <a href="#" class="text-white-50 text-decoration-none">Premium Student</a>
                   </li>
-                  <li><a href="#" class="text-decoration-none">Spotify Free</a></li>
+                  <li><a href="#" class="text-white-50 text-decoration-none">Spotify Free</a></li>
                 </ul>
+              </div>
+
+              <div class="col d-flex flex-row justify-content-end mb-4">
+                <a href="#" class="text-white-50 text-decoration-none me-3"
+                  ><i class="bi bi-instagram text-white"></i
+                ></a>
+                <a href="#" class="text-white-50 text-decoration-none me-3"
+                  ><i class="bi bi-twitter text-white"></i
+                ></a>
+                <a href="#" class="text-white-50 text-decoration-none me-3"
+                  ><i class="bi bi-facebook text-white"></i
+                ></a>
               </div>
             </div>
 
             <div class="row mx-2 mt-5">
-              <div class="col">
-                <p>&copy; Spotify</p>
+              <div class="col text-white-50">
+                <p>&copy; <span id="anno"></span> Spotify AB</p>
               </div>
             </div>
           </footer>
@@ -355,74 +438,93 @@
               <div class="d-flex justify-content-between align-items-center">
                 <h5 class="text-light">Attività amici</h5>
                 <div class="d-flex gap-3">
-                  <a href="#" class="text-secondary fs-5"></a>
-                  <a href="#" class="text-secondary fs-5"></a>
+                  <a href="#" class="text-secondary fs-5"><i class="bi bi-person-plus"></i></a>
+                  <a href="#" class="text-secondary fs-5"><i class="bi bi-x-lg"></i></a>
                 </div>
               </div>
             </section>
             <section class="ps-xl-2 pt-4 ps-lg-0">
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-4">
-                  <a href="#" class="link-underline link-underline-opacity-0"></a>
+                  <a href="#" class="link-underline link-underline-opacity-0"
+                    ><i class="bi bi-person-circle fs-3"></i
+                  ></a>
                   <div class="d-flex flex-column small">
                     <a href="#" class="link-underline link-underline-opacity-0"
-                      ><h6>Guido Dirado</h6></a
+                      ><h6>Charlie Hookham</h6></a
                     >
                     <span class="d-flex">
                       <a href="#" class="link-underline link-underline-opacity-0"
-                        ><p class="mb-0 small">Nome canzone</p></a
+                        ><p class="mb-0 small">In Camera</p></a
+                      >
+                      <i class="bi bi-dot"></i>
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p class="mb-0 small">Yumi Zourna</p></a
                       >
                     </span>
                     <span class="d-flex gap-1">
-                      <a href="#" class="link-underline link-underline-opacity-0"
-                        ><p>Nome album</p></a
-                      >
+                      <i class="bi bi-circle"></i>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p>EP III</p></a>
                     </span>
                   </div>
                 </div>
-                <div><p class="d-none d-xl-block">4 ore fa</p></div>
+                <div><p class="time d-none d-xl-block">4 ore fa</p></div>
               </div>
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-4">
-                  <a href="#" class="link-underline link-underline-opacity-0"></a>
+                  <a href="#" class="link-underline link-underline-opacity-0"
+                    ><i class="bi bi-person-circle fs-3"></i
+                  ></a>
                   <div class="d-flex flex-column small">
                     <a href="#" class="link-underline link-underline-opacity-0"
-                      ><h6>Felice Dellasega</h6></a
+                      ><h6>lightdark02</h6></a
                     >
                     <span class="d-flex">
                       <a href="#" class="link-underline link-underline-opacity-0"
-                        ><p class="mb-0 small">nome canzone</p></a
+                        ><p class="mb-0 small">Aimed to Kill</p></a
+                      >
+                      <i class="bi bi-dot"></i>
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p class="mb-0 small">Jade LeMac</p></a
                       >
                     </span>
-                    <span class="d-flex gap-1 small">
+                    <span class="d-flex gap-1 small"
+                      ><i class="bi bi-circle"></i>
                       <a href="#" class="link-underline link-underline-opacity-0"
-                        ><p>nome album</p></a
+                        ><p>Aimed to Kill</p></a
                       ></span
                     >
                   </div>
                 </div>
-                <div><p class="d-none d-xl-block">15 ore fa</p></div>
+                <div><p class="time d-none d-xl-block">15 ore fa</p></div>
               </div>
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-4">
-                  <a href="#" class="link-underline link-underline-opacity-0"></a>
+                  <a href="#" class="link-underline link-underline-opacity-0"
+                    ><i class="bi bi-person-circle fs-3"></i
+                  ></a>
                   <div class="d-flex flex-column small">
                     <a href="#" class="link-underline link-underline-opacity-0"
-                      ><h6>Giovanni Piede</h6></a
+                      ><h6>Valeria Traverso</h6></a
                     >
-
-                    <a href="#" class="link-underline link-underline-opacity-0"
-                      ><p class="mb-0 small">nome canzone</p></a
-                    >
-
-                    <span class="d-flex gap-1">
+                    <span class="d-flex">
                       <a href="#" class="link-underline link-underline-opacity-0"
-                        ><p>nome album</p></a
+                        ><p class="mb-0 small">New Kings</p></a
+                      >
+                      <i class="bi bi-dot"></i>
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p class="mb-0 small">Sleeping Wolf</p></a
+                      >
+                    </span>
+                    <span class="d-flex gap-1">
+                      <i class="bi bi-music-note-beamed"></i>
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p>Twist Badass mood</p></a
                       >
                     </span>
                   </div>
                 </div>
-                <div><p class="d-none d-xl-block">2 giorni fa</p></div>
+                <div><p class="time d-none d-xl-block">2 giorni fa</p></div>
               </div>
             </section>
           </div>
@@ -435,25 +537,58 @@
           <img
             src="./assets/imgs/main/image-1.jpg"
             alt="Foto_prova"
-            style="height: 55px; width: 60px"
+            style="height: 53px; width: 60px"
           />
           <div class="mx-3 mt-1">
             <a href="#" class="text-decoration-none text-white">nome canzone</a>
             <p><a class="text-decoration-none text-secondary" href="#">artista</a></p>
           </div>
+          <a href=""><i class="hover_heart bi bi-heart text-secondary"></i></a>
         </div>
         <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1">
           <div class="d-flex flex-row justify-content-between align-items-center">
-            <div>
-              <a href="#" class="text-decoration-none p-1 prova"></a>
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-shuffle text-secondary fs-5"></i
+            ></a>
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-chevron-bar-left text-secondary fs-3"></i
+            ></a>
+            <div id="provatre">
+              <a href="#" class="text-decoration-none p-1 prova"
+                ><i class="provadue bi bi-play-circle-fill text-white fs-3"></i
+              ></a>
             </div>
+
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-chevron-bar-right text-secondary fs-3"></i
+            ></a>
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-repeat text-secondary fs-5"></i
+            ></a>
           </div>
           <input type="range" min="1" max="100" value="1" class="slider" id="mySlider" />
         </div>
         <div
           class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center"
         >
-          <div></div>
+          <div class="d-flex flex-row justify-content-between align-items-center align-self-end">
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-file-play-fill text-secondary fs-5 d-none d-sm-flex"></i
+            ></a>
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-mic-fill text-secondary fs-3 d-none d-sm-flex"></i
+            ></a>
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-list text-secondary fs-3 d-none d-sm-flex"></i
+            ></a>
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-volume-off text-secondary fs-3"></i
+            ></a>
+            <input type="range" min="1" max="100" value="10" class="slider" />
+            <a href="#" class="text-decoration-none p-1"
+              ><i class="bi bi-arrows-fullscreen text-secondary fs-5"></i
+            ></a>
+          </div>
         </div>
       </div>
     </footer>
@@ -463,5 +598,6 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
