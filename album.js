@@ -5,9 +5,6 @@ const host = "deezerdevs-deezer.p.rapidapi.com";
 const params = new URLSearchParams(window.location.search);
 const albumID = params.get("album");
 
-const arrayAlbum = [];
-const arrayArtist = [];
-
 const createDataArray = async () => {
   try {
     const response = await fetch(URL + albumID, {
@@ -26,28 +23,27 @@ const createDataArray = async () => {
 
     objData.data.forEach((obj) => {
       const album = obj.album;
+      console.log(album);
       const artist = obj.artist;
+      console.log(artist);
 
-      arrayAlbum.push(album);
-      arrayArtist.push(artist);
+      const imgAlbum = document.getElementById("imgAlbum");
+      imgAlbum.src = album.cover_medium;
+      // console.log(album.cover_medium);
+
+      const typeAlbum = document.getElementById("typeAlbum");
+      typeAlbum.innerText = album.type;
+      // console.log(album.title);
+
+      const titleSong = document.getElementById("titleSong");
+      titleSong.innerText = artist.name;
+
+      const imgArtist = document.getElementById("imgArtist");
+      imgArtist.src = artist;
     });
-
-    addAlbums(arrayAlbum);
-    addArtist(arrayArtist);
   } catch (error) {
     console.error("Errore nella fetch:", error);
   }
-};
-
-const addAlbums = (albums) => {
-  albums.forEach((album) => {});
-  console.log(arrayAlbum);
-};
-const addArtist = (artists) => {
-  artists.forEach((artist) => {
-    // console.log(artist);
-  });
-  console.log(arrayArtist);
 };
 
 window.onload = () => {
