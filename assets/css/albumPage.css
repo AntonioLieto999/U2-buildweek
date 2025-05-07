@@ -5,8 +5,7 @@
 }
 body {
   font-family: "Circular";
-  src: url(../fonts/CircularStd-Medium.otf);
-  font-weight: 500;
+  font-weight: 300;
   font-style: normal;
   color: white;
   margin: 0;
@@ -17,14 +16,13 @@ body {
   padding-top: 1.5rem;
 }
 
-#playId {
-  display: inline-block;
-  vertical-align: -0.125em;
-  fill: #1ed760;
+#imgAlbum {
+  width: 100%;
   object-fit: cover;
-  background-color: #000000;
-  border-radius: 100%;
-  border-color: #1ed760;
+}
+
+#playId {
+  max-width: 30%;
 }
 
 #list-bg {
