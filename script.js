@@ -10,37 +10,63 @@ const API_OPTIONS = {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
   },
 };
+document.addEventListener("DOMContentLoaded", function () {
+  const grid = document.getElementById("grid");
 
-const genres = [
-  {name: "Pop", color: "#ff6b6b", image: "C:Users\franc.vscode.vscodeBW2D1U2-buildweekassetsimgssearchimage-1.jpeg"},
-  {name: "Rock", color: "#6b6bff", image: "https://via.placeholder.com/100?text=Rock"},
-  {name: "Jazz", color: "#ffd36b", image: "https://via.placeholder.com/100?text=Jazz"},
-  {name: "Hip-Hop", color: "#6bffd3", image: "https://via.placeholder.com/100?text=HipHop"},
-  {name: "Italiana", color: "#ff6b6b", image: "https://via.placeholder.com/100?text=Italiana"},
-  {name: "Ambient", color: "#ff6b6b", image: "https://via.placeholder.com/100?text=Ambient"},
-  {name: "Meditazione", color: "#ff6b6b", image: "https://via.placeholder.com/100?text=Meditazione"},
-  {name: "Motown", color: "#ff6b6b", image: "https://via.placeholder.com/100?text=Motown"},
-  {name: "Underground Techno", color: "#ff6b6b", image: "https://via.placeholder.com/100?text=UndergroundTechno"},
-  {name: "Maga Hits", color: "#ff6b6b", image: "https://via.placeholder.com/100?text=MagaHits"},
-  {name: "Dance", color: "#ff6b6b", image: "https://via.placeholder.com/100?text=Dance"},
-  {name: "Indie", color: "#ff6b6b", image: "https://via.placeholder.com/100?text=Indie"},
-];
+  const categories = [
+    {title: "Music", img: "./assets/imgs/search/image-1.jpeg"},
+    {title: "Live Events", img: "./assets/imgs/search/image-2.jpg"},
+    {title: "New Releases", img: "./assets/imgs/search/image-3.jpg"},
+    {title: "Sanremo Festival", img: "./assets/imgs/search/image-4.jpg"},
+    {title: "Latin", img: "./assets/imgs/search/image-5.jpg"},
+    {title: "Pop", img: "./assets/imgs/search/image-6.jpg"},
+    {title: "Hip-Hop", img: "./assets/imgs/search/image-7.jpg"},
+    {title: "Podcast Charts", img: "./assets/imgs/search/image-8.jpg"},
+    {title: "Podcast New Releases", img: "./assets/imgs/search/image-9.jpg"},
+    {title: "Video Podcasts", img: "./assets/imgs/search/image-10.jpg"},
+    {title: "Charts", img: "../assets/imgs/search/image-11.jpg"},
+    {title: "Dance/Electronic", img: "../assets/imgs/search/image-12.jpg"},
+    {title: "Rock", img: "./assets/imgs/search/image-13.jpg"},
+    {title: "Indie", img: "./assets/imgs/search/image-14.jpg"},
+    {title: "R&B", img: "./assets/imgs/search/image-15.jpg"},
+    {title: "Reggae", img: "./assets/imgs/search/image-16.jpg"},
+    {title: "Metal", img: "./assets/imgs/search/image-17.jpg"},
+    {title: "", img: "./assets/imgs/search/image-18.jpg"},
+  ];
 
-const grid = document.getElementById("grid");
+  categories.forEach(card => {
+    const col = document.createElement("div");
+    col.className = "col";
 
-genres.forEach(genre => {
-  const col = document.createElement("div");
-  col.className = "col";
-
-  const card = document.createElement("div");
-  card.className = "card";
-  card.style.backgroundColor = genre.color;
-
-  card.innerHTML = `
-      <h5 class="card-title">${genre.name}</h5>
-      <img src="${genre.image}" alt="${genre.name}" />
+    col.innerHTML = `
+      <div class="card" style="background-color: ${randomColor()}">
+        <h5 class="card-title">${card.title}</h5>
+        <img src="${card.img}" alt="${card.title}" />
+      </div>
     `;
 
-  col.appendChild(card);
-  grid.appendChild(col);
+    grid.appendChild(col);
+  });
 });
+
+function randomColor() {
+  const colors = [
+    "#e13300",
+    "#1e3264",
+    "#8c1932",
+    "#148a08",
+    "#b49bc8",
+    "#d84000",
+    "#535353",
+    "#e8115b",
+    "#777",
+    "#006450",
+    "#27856a",
+    "#509bf5",
+    "#a56752",
+    "#477d95",
+    "#b49bc8",
+    "#5f8104",
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
