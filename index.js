@@ -120,7 +120,7 @@ searchButton.addEventListener("click", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   getAlbums();
-  generateListChart();
+
   const spanSearch = document.getElementById("spanSearch");
   const searchIcon = document.getElementById("searchIcon");
   const searchInputWrapper = document.getElementById("searchInputWrapper");
