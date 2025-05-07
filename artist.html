@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>U2-W2-build week</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="placeholder.css" />
+    <script type="module" src="token.js"></script>
+    <script src="placeholder.js" defer></script>
+  </head>
+  <body>
+    <main class="container-fluid">
+      <div class="row">
+        <aside class="col-3 d-none d-md-block bg-black vh-100 overflow-hidden">
+          <div class="pt-2 ps-1">
+            <a href="#"><i class="fs-3 text-light"></i></a>
+          </div>
+          <section class="p-0">
+            <nav>
+              <ul class="d-flex flex-column gap-2 list-unstyled">
+                <li>
+                  <a href="#" class="link-underline link-underline-opacity-0">Home</a>
+                </li>
+                <li>
+                  <a href="#" class="link-underline link-underline-opacity-0"> <span>Cerca</span></a>
+                  <div class="ps-2 d-none d-inline-block">
+                    <div class="d-flex gap-3 align-items-center w-100">
+                      <input id="inputCerca" type="text" class="form-control bg-dark text-white p-1 border-0" placeholder="Film, genere, ecc..." />
+                      <button id="searchButton" class="btn btn-dark text-white rounded-3 p-1 px-2">Cerca</button>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="#" class="link-underline link-underline-opacity-0">La tua libreria</a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+          <section class="p-0 py-2 border-dark border-bottom">
+            <nav>
+              <ul class="d-flex flex-column gap-2 list-unstyled">
+                <li>
+                  <a href="#" class="link-underline link-underline-opacity-0"> Crea playlist</a>
+                </li>
+                <li>
+                  <a href="#" class="link-underline link-underline-opacity-0"><span>Brani che ti piacciono</span></a>
+                </li>
+                <li>
+                  <a href="#" class="link-underline link-underline-opacity-0">I tuoi episodi</a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+          <section class="h-100">
+            <div class="py-3 overflow-y-scroll h-100" id="scrollbar">
+              <ul id="random-songs" class="list-group list-unstyled d-flex flex-column gap-0"></ul>
+            </div>
+          </section>
+        </aside>
+
+        <!--Colonna centrale-->
+        <div class="col-12 col-md-9 col-xl-7 overflow-y-scroll overflow-x-hidden vh-100 px-0 mx-0 main-bg" id="center">
+          <div class="col-12 text-white">
+            <div class="position-relative">
+              <img class="main-image" src="placeholder.jpg" alt="placeoholder" />
+              <div class="artist-bg-image">
+                <div class="d-flex gap-2 align-items-center">
+                  <img class="verified-badge" src="verified-badge.png" alt="verified" />
+                  <p class="fs-6">Artista verificato</p>
+                </div>
+                <h1 id="artist-page-title"></h1>
+                <p>3.235.411 ascoltatori mensili</p>
+              </div>
+            </div>
+          </div>
+          <div class="row p-4 text-white gx-5">
+            <div class="col-12 d-flex align-items-center gap-4">
+              <img id="play-btn" src="play-button.png" alt="play button" />
+              <button id="follow-btn" class="btn btn-outline-light text-uppercase fw-bold">following</button>
+              <i class="bi bi-three-dots text-white fs-3"></i>
+            </div>
+
+            <!-- left div "POPOLARI" -->
+            <div class="col-lg-6 mt-4">
+              <p class="fs-3 fw-bold mb-3">Popolari</p>
+
+              <!-- dynamic song list -->
+              <div id="song-list" class="row gy-3 tracks ps-4 mb-4"></div>
+
+              <!-- view more button -->
+              <a id="view-more-btn" class="text-decoration-none text-uppercase fw-bold ps-4 small-font grey-font">visualizza altro</a>
+            </div>
+
+            <!-- right div "BRANI CHE TI PIACCIONO" -->
+            <div class="liked-songs-div col-lg-6 mt-4">
+              <p class="fs-3 fw-bold ms-lg-5">Brani che ti piacciono</p>
+
+              <!-- dynamic liked songs -->
+              <div id="right-side-liked-songs" class="d-flex liked-songs align-items-center mt-4 ms-lg-5"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- friends aside -->
+        <aside class="col-2 d-none d-xl-block bg-black vh-100 p-0">
+          <div class="p-3">
+            <section class="pt-2 ps-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="text-light">Attività amici</h5>
+                <div class="d-flex gap-3">
+                  <a href="#" class="text-secondary fs-5"></a>
+                  <a href="#" class="text-secondary fs-5"></a>
+                </div>
+              </div>
+            </section>
+            <section class="ps-xl-2 pt-4 ps-lg-0">
+              <div class="d-flex text-secondary justify-content-between pt-3">
+                <div class="d-flex gap-4">
+                  <a href="#" class="link-underline link-underline-opacity-0"></a>
+                  <div class="d-flex flex-column small">
+                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Guido Dirado</h6></a>
+                    <span class="d-flex">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">Nome canzone</p></a>
+                    </span>
+                    <span class="d-flex gap-1">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p>Nome album</p></a>
+                    </span>
+                  </div>
+                </div>
+                <div><p class="d-none d-xl-block">4 ore fa</p></div>
+              </div>
+              <div class="d-flex text-secondary justify-content-between pt-3">
+                <div class="d-flex gap-4">
+                  <a href="#" class="link-underline link-underline-opacity-0"></a>
+                  <div class="d-flex flex-column small">
+                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Felice Micio</h6></a>
+                    <span class="d-flex">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
+                    </span>
+                    <span class="d-flex gap-1 small">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a></span
+                    >
+                  </div>
+                </div>
+                <div><p class="d-none d-xl-block">15 ore fa</p></div>
+              </div>
+              <div class="d-flex text-secondary justify-content-between pt-3">
+                <div class="d-flex gap-4">
+                  <a href="#" class="link-underline link-underline-opacity-0"></a>
+                  <div class="d-flex flex-column small">
+                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Giovanni Piede</h6></a>
+
+                    <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
+
+                    <span class="d-flex gap-1">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a>
+                    </span>
+                  </div>
+                </div>
+                <div><p class="d-none d-xl-block">2 giorni fa</p></div>
+              </div>
+            </section>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="container-fluid bg-black mx-0 bottom-0">
+      <div class="row text-white flex-column flex-sm-row justify-content-center">
+        <div class="col-12 col-sm-4 d-flex align-items-center text-white">
+          <img src="./assets/imgs/main/image-1.jpg" alt="Foto_prova" style="height: 55px; width: 60px" />
+          <div class="mx-3 mt-1">
+            <a href="#" class="text-decoration-none text-white">nome canzone</a>
+            <p><a class="text-decoration-none text-secondary" href="#">artista</a></p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1">
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <div>
+              <a href="#" class="text-decoration-none p-1 prova"></a>
+            </div>
+          </div>
+          <input type="range" min="1" max="100" value="1" class="slider" id="mySlider" />
+        </div>
+        <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center">
+          <div></div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
