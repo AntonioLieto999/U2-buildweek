@@ -56,7 +56,7 @@ const generateListChart = function (array) {
     newLi.innerHTML = `
     <a href="artist.html?artistId=${element.artist.id}" class='text-decoration-none'>
     <div class='d-flex gap-3 rounded-2 p-2 artist-list'>
-      <div class='rounded-circle overflow-hidden' style='width: 2.5em'> 
+      <div class='overflow-hidden' style='width: 2.5em'> 
           <img src="${element.artist.picture_small}" class="img-fluid"> 
         </div> 
         <div> 
