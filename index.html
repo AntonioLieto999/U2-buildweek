@@ -27,8 +27,11 @@
                 </li>
                 <li>
                   <a href="#" class="link-underline link-underline-opacity-0"> <span>Cerca</span></a>
+                  <a href="#" class="link-underline link-underline-opacity-0"> <span>Cerca</span></a>
                   <div class="ps-2 d-none d-inline-block">
                     <div class="d-flex gap-3 align-items-center w-100">
+                      <input id="inputCerca" type="text" class="form-control bg-dark text-white p-1 border-0" placeholder="Film, genere, ecc..." />
+                      <button id="searchButton" class="btn btn-dark text-white rounded-3 p-1 px-2">Cerca</button>
                       <input id="inputCerca" type="text" class="form-control bg-dark text-white p-1 border-0" placeholder="Film, genere, ecc..." />
                       <button id="searchButton" class="btn btn-dark text-white rounded-3 p-1 px-2">Cerca</button>
                     </div>
@@ -47,6 +50,7 @@
                   <a href="#" class="link-underline link-underline-opacity-0"> Crea playlist</a>
                 </li>
                 <li>
+                  <a href="#" class="link-underline link-underline-opacity-0"><span>Brani che ti piacciono</span></a>
                   <a href="#" class="link-underline link-underline-opacity-0"><span>Brani che ti piacciono</span></a>
                 </li>
                 <li>
@@ -69,6 +73,7 @@
             <div class="col-3 d-flex align-items-center"></div>
             <div class="col-9 d-flex justify-content-end align-items-center pe-3">
               <button class="fs-4 border-0 me-3 d-none d-sm-block" id="buttonIscriviti">Iscriviti</button>
+              <button class="fs-4 border-0 me-3 d-none d-sm-block" id="buttonIscriviti">Iscriviti</button>
               <div class="dropdown" id="buttonAccedi">
                 <button
                   type="button"
@@ -83,9 +88,11 @@
                   <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="email" placeholder="email@example.com" />
+                    <input type="email" class="form-control" id="email" placeholder="email@example.com" />
                   </div>
                   <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" />
                     <input type="password" class="form-control" id="password" placeholder="Password" />
                   </div>
                   <button type="submit" class="btn bg-dark text-white">Login</button>
@@ -154,8 +161,11 @@
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-9.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-10.jpg" style="width: 30px; height: 30px" />
+                      <img src="./assets/imgs/main/image-10.jpg" style="width: 30px; height: 30px" />
                     </div>
                     <div class="col d-flex ps-0">
+                      <img src="./assets/imgs/main/image-11.jpg" style="width: 30px; height: 30px" />
+                      <img src="./assets/imgs/main/image-12.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-11.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-12.jpg" style="width: 30px; height: 30px" />
                     </div>
@@ -175,6 +185,7 @@
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-13.jpg" style="width: 60px; height: 60px" />
+                      <img src="./assets/imgs/main/image-13.jpg" style="width: 60px; height: 60px" />
                     </div>
                   </div>
                   <div class="row">
@@ -190,8 +201,12 @@
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-14.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-15.jpg" style="width: 30px; height: 30px" />
+                      <img src="./assets/imgs/main/image-14.jpg" style="width: 30px; height: 30px" />
+                      <img src="./assets/imgs/main/image-15.jpg" style="width: 30px; height: 30px" />
                     </div>
                     <div class="col d-flex ps-0">
+                      <img src="./assets/imgs/main/image-16.jpg" style="width: 30px; height: 30px" />
+                      <img src="./assets/imgs/main/image-17.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-16.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-17.jpg" style="width: 30px; height: 30px" />
                     </div>
@@ -207,6 +222,7 @@
                 <div class="col d-flex flex-row align-items-center me-3">
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
+                      <img src="./assets/imgs/main/image-18.jpg" style="width: 60px; height: 60px" />
                       <img src="./assets/imgs/main/image-18.jpg" style="width: 60px; height: 60px" />
                     </div>
                   </div>
@@ -225,12 +241,14 @@
                 </div>
                 <div class="col-12">
                   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5" id="moreAlbum"></div>
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5" id="moreAlbum"></div>
                 </div>
               </div>
             </div>
           </div>
 
           <footer class="mb-5 pb-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 mx-2 border-bottom">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 mx-2 border-bottom">
               <div class="col mb-4">
                 <p>Azienda</p>
@@ -308,10 +326,13 @@
                   <a href="#" class="link-underline link-underline-opacity-0"></a>
                   <div class="d-flex flex-column small">
                     <a href="#" class="link-underline link-underline-opacity-0"><h6>Guido Dirado</h6></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Guido Dirado</h6></a>
                     <span class="d-flex">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">Nome canzone</p></a>
                       <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">Nome canzone</p></a>
                     </span>
                     <span class="d-flex gap-1">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p>Nome album</p></a>
                       <a href="#" class="link-underline link-underline-opacity-0"><p>Nome album</p></a>
                     </span>
                   </div>
@@ -325,8 +346,10 @@
                     <a href="#" class="link-underline link-underline-opacity-0"><h6>Felice Dellasega</h6></a>
                     <span class="d-flex">
                       <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
                     </span>
                     <span class="d-flex gap-1 small">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a></span
                       <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a></span
                     >
                   </div>
@@ -338,10 +361,13 @@
                   <a href="#" class="link-underline link-underline-opacity-0"></a>
                   <div class="d-flex flex-column small">
                     <a href="#" class="link-underline link-underline-opacity-0"><h6>Giovanni Piede</h6></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Giovanni Piede</h6></a>
 
+                    <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
                     <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
 
                     <span class="d-flex gap-1">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a>
                       <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a>
                     </span>
                   </div>
@@ -357,6 +383,7 @@
       <div class="row text-white flex-column flex-sm-row justify-content-center">
         <div class="col-12 col-sm-4 d-flex align-items-center text-white">
           <img src="./assets/imgs/main/image-1.jpg" alt="Foto_prova" style="height: 55px; width: 60px" />
+          <img src="./assets/imgs/main/image-1.jpg" alt="Foto_prova" style="height: 55px; width: 60px" />
           <div class="mx-3 mt-1">
             <a href="#" class="text-decoration-none text-white">nome canzone</a>
             <p><a class="text-decoration-none text-secondary" href="#">artista</a></p>
@@ -370,6 +397,7 @@
           </div>
           <input type="range" min="1" max="100" value="1" class="slider" id="mySlider" />
         </div>
+        <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center">
         <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center">
           <div></div>
         </div>
