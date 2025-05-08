@@ -6,51 +6,8 @@ const host = "deezerdevs-deezer.p.rapidapi.com";
 // const params = new URLSearchParams(window.location.search);
 // const idAlbum = params.get("album");
 
-// const createDataArray = async () => {
-//   try {
-//     const response = await fetch(URL + albumID, {
-//       method: "GET",
-//       headers: {
-//         "x-rapidapi-key": Token,
-//         "x-rapidapi-host": host,
-//       },
-//     });
-
-//     if (!response.ok) {
-//       throw new Error("Errore nella fetch");
-//     }
-
-//     const objData = await response.json();
-
-//     objData.data.forEach((obj) => {
-//       // console.log(obj);
-//       const album = obj.album;
-//       // console.log(album);
-//       const artist = obj.artist;
-//       // console.log(artist);
-
-//       const imgAlbum = document.getElementById("imgAlbum");
-//       imgAlbum.src = album.cover_medium;
-//       // console.log(album.cover_medium);
-
-//       // console.log(album[0].contributors);
-
-//       const typeAlbum = document.getElementById("typeAlbum");
-//       typeAlbum.innerText = album.type;
-//       // console.log(album.title);
-
-//       const titleSong = document.getElementById("titleSong");
-//       titleSong.innerText = artist.name;
-
-//       const imgArtist = document.getElementById("imgArtist");
-//       imgArtist.src = artist;
-//     });
-//   } catch (error) {
-//     console.error("Errore nella fetch:", error);
-//   }
-// };
-const idAlbum = "412";
-const albumTracklist = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + idAlbum + "/top?limit=15";
+const idAlbum = "75621062";
+const albumTracklist = " https://deezerdevs-deezer.p.rapidapi.com/album/" + idAlbum;
 
 // console.log(albumTracklist);
 
@@ -76,31 +33,84 @@ const getTrackList = () => {
       return resp.json();
     })
     .then((track) => {
-      // console.log(track.data);
-      track.data.forEach((song) => {
-        // console.log(song.title);
+      const allArtist = track.tracks.data;
+      const newRow = document.getElementById("newRow");
+      newRow.innerText = "";
+      // console.log(track);
+      allArtist.forEach((song, index) => {
         // console.log(song);
-        const album = song.album;
-        console.log(album);
 
-        const artist = song.artist;
-        // console.log(artist);
+        const albumTitle = song.album.title;
+        const artistName = song.artist.name;
+        const artistImg = track.artist.picture_small;
+        const albumImg = song.album.cover_medium;
+        const songName = song.title;
+        console.log(songName);
+        const totSong = track.nb_tracks;
+        const durationAlbum = track.duration / 60;
+        const min = Math.floor(durationAlbum);
+        const seconds = Number(durationAlbum.toString().split(".")[1]);
+        const duration = min + " min e " + seconds + " sec..";
+        const realeseDate = track.release_date;
+        const riprod = allArtist[index].rank;
+        const timeSong = song.duration;
 
-        const imgAlbum = document.getElementById("imgAlbum");
-        imgAlbum.src = album.cover_medium;
-        // console.log(album.cover_medium);
+        const imgALbum = document.getElementById("imgAlbum");
+        imgALbum.src = albumImg;
+        const titleAlbum = document.getElementById("typeAlbum");
+        titleAlbum.innerText = albumTitle;
+        const songTitle = document.getElementById("titleSong");
+        songTitle.innerText = songName;
+        const imgArt = document.getElementById("imgArtist");
+        imgArt.src = artistImg;
+        const nameArtist = document.getElementById("nameArtist");
+        nameArtist.innerText = artistName + " ";
+        const yearAlbum = document.getElementById("yearAlbum");
+        yearAlbum.innerText = "• " + realeseDate + " ";
+        const numOfSongs = document.getElementById("numOfSongs");
+        numOfSongs.innerText = "• " + totSong + " brani, ";
+        const durataAlbum = document.getElementById("durata");
+        durataAlbum.innerText = duration;
 
-        const typeAlbum = document.getElementById("typeAlbum");
-        typeAlbum.innerText = album.type;
-        // console.log(album.title);
+        const divColOne = document.createElement("div");
+        divColOne.className = "col-1 d-flex";
+        divColOne.innerText = index + 1;
 
-        const titleSong = document.getElementById("titleSong");
-        titleSong.innerText = artist.name;
+        const divColFive = document.createElement("div");
+        divColFive.className = "col-5";
 
-        const imgArtist = document.getElementById("imgArtist");
-        imgArtist.src = artist;
+        const h6 = document.createElement("h6");
+        h6.innerText = songName;
+
+        const firstP = document.createElement("p");
+        firstP.innerText = artistName;
+
+        const divColFour = document.createElement("div");
+        divColFour.className = "col-4";
+
+        const secondP = document.createElement("p");
+        secondP.innerText = riprod;
+
+        const divColTwo = document.createElement("div");
+        divColTwo.className = "col-2";
+
+        const thirdP = document.createElement("p");
+        thirdP.innerText = timeSong.toString().replace(/^(\d)/, "$1:") + "min";
+
+        divColTwo.appendChild(thirdP);
+        divColFour.appendChild(secondP);
+
+        divColFive.appendChild(firstP);
+        divColFive.appendChild(h6);
+
+        newRow.appendChild(divColOne);
+        newRow.appendChild(divColFive);
+        newRow.appendChild(divColFour);
+        newRow.appendChild(divColTwo);
       });
-    });
+    })
+    .catch(error);
+  console.error("Errore nella fetch:", error);
 };
 window.onload = () => {
   // createDataArray();
