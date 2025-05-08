@@ -16,24 +16,37 @@
     />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
   </head>
+  <style>
+    body {
+      font-family: "Circular";
+      font-weight: 300;
+    }
+  .grey-font {
+    color: #9b9a9a;
+  }
+  </style>
   <body style="background-color: #202020">
     <main class="container-fluid">
       <div class="row">
         <aside class="col-3 d-none d-md-block bg-black vh-100 overflow-hidden">
-          <div class="pt-2 ps-1">
-            <a href="#"><i class="bi bi-three-dots fs-3 text-light"></i></a>
+          <div class="pt-2 p-3">
+            <a href="#"><i class="bi bi-three-dots fs-4 text-light me-2"></i></a>
           </div>
-          <section class="p-0">
+          <section class="p-3">
             <nav>
               <ul class="d-flex flex-column gap-2 list-unstyled">
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0"
-                    ><i class="bi bi-house-door-fill fs-5 p-2"></i> Home</a
-                  >
+                  <a href="#" class="link-underline link-underline-opacity-0">
+                    <i class="bi bi-house-door-fill fs-4 me-3 grey-font"></i>
+                    <span class="grey-font fw-bold">Home</span>
+                  </a>
                 </li>
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0"> <span>Cerca</span></a>
-                  <a href="#" class="link-underline link-underline-opacity-0"> <span>Cerca</span></a>
+                  <a href="#" class="link-underline link-underline-opacity-0">
+                    <i class="bi bi-search fs-4 me-3 grey-font"></i>
+                    <span class="grey-font fw-bold">Cerca</span>
+                  </a>
+                  <a href="#" class="link-underline link-underline-opacity-0"> </a>
                   <div class="ps-2 d-none d-inline-block">
                     <div class="d-flex gap-3 align-items-center w-100">
                       <input id="inputCerca" type="text" class="form-control bg-dark text-white p-1 border-0" placeholder="Film, genere, ecc..." />
@@ -44,38 +57,35 @@
                   </div>
                 </li>
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0"
-                    ><i class="bi bi-collection fs-5 p-2"></i> La tua libreria</a
-                  >
+                  <a href="#" class="link-underline link-underline-opacity-0">
+                    <i class="bi bi-collection fs-4 me-3 grey-font"></i> 
+                    <span class="grey-font fw-bold">La tua libreria</span>
+                    </a>
                 </li>
               </ul>
             </nav>
           </section>
-          <section class="p-0 py-2 border-dark border-bottom">
+          <section class="p-3 py-2 border-dark border-bottom">
             <nav>
-              <ul class="d-flex flex-column gap-2 list-unstyled">
+              <ul class="d-flex flex-column gap-3 list-unstyled">
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0"> Crea playlist</a>
+                  <a href="#" class="text-decoration-none">
+                    <img class="rounded-1 me-3" src="./assets/imgs/main/create-playlist.jpg" alt="create playlist" width="25px">
+                 <span class="fw-bold grey-font">Crea playlist</span>            
+                  </a>
+                </li>
+             
+                <li>
+                  <a href="#" class="link-underline link-underline-opacity-0">
+                    <img class="rounded-1 me-3" src="./assets/imgs/main/liked-songs.jpg" alt="favourite songs" width="25px">
+                    <span class="fw-bold grey-font">Brani che ti piacciono</span>
+                  </a>
                 </li>
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0"><span>Brani che ti piacciono</span></a>
-                  <a href="#" class="link-underline link-underline-opacity-0"><span>Brani che ti piacciono</span></a>
-                </li>
-                <li>
-                  <a href="#" class="link-underline link-underline-opacity-0"
-                    ><span class="rounded-1 d-inline-block" id="heart-colored"
-                      ><i class="bi bi-heart-fill fs-5 p-2"></i
-                    ></span>
-                    Brani che ti piacciono</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="link-underline link-underline-opacity-0"
-                    ><span class="rounded-1 d-inline-block" id="green-bookmark"
-                      ><i class="bi bi-bookmark-fill fs-5 p-2"></i
-                    ></span>
-                    I tuoi episodi</a
-                  >
+                  <a href="#" class="link-underline link-underline-opacity-0">
+                    <img class="rounded-1 me-3" src="./assets/imgs/main/your-episodes.jpg" alt="your episodes" width="25px">
+                    <span class="fw-bold grey-font">I tuoi episodi</span>
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -294,85 +304,9 @@
             </div>
           </div>
 
-          <footer class="mb-5 pb-4">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 mx-2 border-bottom">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 mx-2 border-bottom">
-              <div class="col mb-4">
-                <p>Azienda</p>
-                <ul class="list-group list-unstyled gap-2">
-                  <li><a href="#" class="text-white-50 text-decoration-none">Chi siamo</a></li>
-                  <li>
-                    <a href="#" class="text-white-50 text-decoration-none">Opportunità di lavoro</a>
-                  </li>
-                  <li><a href="#" class="text-white-50 text-decoration-none">For the record</a></li>
-                </ul>
-              </div>
-
-              <div class="col mb-4">
-                <p>Community</p>
-                <ul class="list-group list-unstyled gap-2">
-                  <li><a href="#" class="text-white-50 text-decoration-none">Per artisti</a></li>
-                  <li><a href="#" class="text-white-50 text-decoration-none">Sviluppatori</a></li>
-                  <li><a href="#" class="text-white-50 text-decoration-none">Pubblicità</a></li>
-                  <li><a href="#" class="text-white-50 text-decoration-none">Investitori</a></li>
-                  <li><a href="#" class="text-white-50 text-decoration-none">Venditori</a></li>
-                </ul>
-              </div>
-
-              <div class="col mb-4">
-                <p>Link utili</p>
-                <ul class="list-group list-unstyled gap-2">
-                  <li><a href="#" class="text-white-50 text-decoration-none">Assistenza</a></li>
-                  <li>
-                    <a href="#" class="text-white-50 text-decoration-none"
-                      >App per cellulare gratuita</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#" class="text-white-50 text-decoration-none"
-                      >Dritti del consumatore</a
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <div class="col mb-4">
-                <p>Piani spotify</p>
-                <ul class="list-group list-unstyled gap-2">
-                  <li>
-                    <a href="#" class="text-white-50 text-decoration-none">Premium Individual</a>
-                  </li>
-                  <li><a href="#" class="text-white-50 text-decoration-none">Premium Duo</a></li>
-                  <li><a href="#" class="text-white-50 text-decoration-none">Premium Family</a></li>
-                  <li>
-                    <a href="#" class="text-white-50 text-decoration-none">Premium Student</a>
-                  </li>
-                  <li><a href="#" class="text-white-50 text-decoration-none">Spotify Free</a></li>
-                </ul>
-              </div>
-
-              <div class="col d-flex flex-row justify-content-end mb-4">
-                <a href="#" class="text-white-50 text-decoration-none me-3"
-                  ><i class="bi bi-instagram text-white"></i
-                ></a>
-                <a href="#" class="text-white-50 text-decoration-none me-3"
-                  ><i class="bi bi-twitter text-white"></i
-                ></a>
-                <a href="#" class="text-white-50 text-decoration-none me-3"
-                  ><i class="bi bi-facebook text-white"></i
-                ></a>
-              </div>
-            </div>
-
-            <div class="row mx-2 mt-5">
-              <div class="col text-white-50">
-                <p>&copy; <span id="anno"></span> Spotify AB</p>
-              </div>
-            </div>
-          </footer>
         </div>
 
-        <aside class="col-2 d-none d-lg-block bg-black vh-100 p-0">
+        <aside class="col-2 d-none d-lg-block bg-black vh-100 pe-3">
           <div class="p-3">
             <section class="pt-2 ps-2">
               <div class="d-flex justify-content-between align-items-center">
@@ -383,61 +317,54 @@
                 </div>
               </div>
             </section>
-            <section class="ps-xl-2 pt-4 ps-lg-0">
+            <section class="ps-xl-2 pt-4 ps-lg-0 pe-3">
               <div class="d-flex text-secondary justify-content-between pt-3">
-                <div class="d-flex gap-4">
-                  <a href="#" class="link-underline link-underline-opacity-0"
-                    ><i class="bi bi-person-circle fs-3"></i
-                  ></a>
+                <div class="d-flex gap-3 align-items-start">
+                  <img src="assets/imgs/main/first-friend.png" alt="friend 1" width="40px" style="border-radius: 200px;">
                   <div class="d-flex flex-column small">
-                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Guido Dirado</h6></a>
-                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Guido Dirado</h6></a>
-                    <span class="d-flex">
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">Nome canzone</p></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">Nome canzone</p></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Ben D'Nee</h6></a>
+                   
+                    <span class="d-flex flex-column">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">"The Sound of Silence"</p></a>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">by Simon & Garfunkel</p></a>
                     </span>
-                    <span class="d-flex gap-1">
-                      <a href="#" class="link-underline link-underline-opacity-0"><p>Nome album</p></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p>Nome album</p></a>
+                    <span class="d-flex gap-1 mt-2">
+                      <a href="#" class="link-underline link-underline-opacity-0"><i class="bi bi-disc grey-font"></i></a>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class=" grey-font">Aimed to Kill</p></a>
                     </span>
                   </div>
                 </div>
                 <div><p class="time d-none d-xl-block">4 ore fa</p></div>
               </div>
               <div class="d-flex text-secondary justify-content-between pt-3">
-                <div class="d-flex gap-4">
-                  <a href="#" class="link-underline link-underline-opacity-0"
-                    ><i class="bi bi-person-circle fs-3"></i
-                  ></a>
+                <div class="d-flex gap-3 align-items-start">
+                  <img src="assets/imgs/main/second-friend.jpg" alt="friend 1" width="40px" height="40px" style="border-radius: 600px; object-fit: cover;">
                   <div class="d-flex flex-column small">
-                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Felice Dellasega</h6></a>
-                    <span class="d-flex">
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Arya Ready</h6></a>
+                    <span class="d-flex flex-column">
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">"You Don't Own Me"</p></a>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">by Lesley Gore</p></a>
                     </span>
-                    <span class="d-flex gap-1 small">
-                      <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a></span
-                      <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a></span
-                    >
+                    <span class="d-flex gap-1 mt-2">
+                      <a href="#" class="link-underline link-underline-opacity-0"><i class="bi bi-disc grey-font"></i></a>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class=" grey-font">Free as a Bird</p></a>
+                    </span>
                   </div>
                 </div>
                 <div><p class="time d-none d-xl-block">15 ore fa</p></div>
               </div>
               <div class="d-flex text-secondary justify-content-between pt-3">
-                <div class="d-flex gap-4">
-                  <a href="#" class="link-underline link-underline-opacity-0"
-                    ><i class="bi bi-person-circle fs-3"></i
-                  ></a>
+                <div class="d-flex gap-3 align-items-start">
+                  <img src="assets/imgs/main/third-friend.jpg" alt="friend 1" width="40px" height="40px" style="border-radius: 600px; object-fit: cover;">
                   <div class="d-flex flex-column small">
-                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Giovanni Piede</h6></a>
-                    <a href="#" class="link-underline link-underline-opacity-0"><h6>Giovanni Piede</h6></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Ned D. Parted</h6></a>
 
-                    <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
-                    <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small">nome canzone</p></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">"Way Down We Go"</p></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">by Kaleo</p></a>
 
-                    <span class="d-flex gap-1">
-                      <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p>nome album</p></a>
+                    <span class="d-flex gap-1 mt-2">
+                      <a href="#" class="link-underline link-underline-opacity-0"><i class="bi bi-music-note-beamed grey-font"></i></a>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="grey-font">Sad songs for sad mood</p></a>
                     </span>
                   </div>
                 </div>

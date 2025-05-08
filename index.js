@@ -58,13 +58,13 @@ const generateListChart = function (array) {
     const newLi = document.createElement("li");
     newLi.innerHTML = `
     <a href="artist.html?artistId=${element.artist.id}" class='text-decoration-none'>
-    <div class='d-flex gap-3 rounded-2 p-2 artist-list'>
+    <div class='d-flex gap-3 rounded-2 ms-3 pb-2 artist-list'>
       <div class='overflow-hidden' style='width: 2.5em'> 
           <img src="${element.artist.picture_small}" class="img-fluid"> 
         </div> 
         <div> 
-          <h6 class='mb-0 text-light '> ${element.artist.name} </h6>
-          <p class='small mt-0'> Artista</p>
+          <h6 class='mb-0 text-light '>${element.album.title}  </h6>
+          <p class='small mt-0 grey-font'>${element.artist.name}</p>
         </div> 
       </div>
     </a>
