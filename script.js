@@ -1,6 +1,7 @@
 const searchBtn = document.getElementById("searchBtn");
 const searchInput = document.getElementById("searchInput");
 const resultsContainer = document.getElementById("resultsContainer");
+const grid = document.getElementById("grid");
 
 const API_URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 const API_OPTIONS = {
@@ -13,6 +14,8 @@ const API_OPTIONS = {
 
 async function fetchSearchResults(query) {
   try {
+    document.getElementById("grid").style.display = "none";
+
     const response = await fetch(`${API_URL}${query}`, API_OPTIONS);
     if (!response.ok) throw new Error("Errore nella fetch");
     const data = await response.json();
@@ -50,11 +53,17 @@ document.addEventListener("DOMContentLoaded", function () {
     col.className = "col";
 
     col.innerHTML = `
-      <div class="card" style="background-color: ${randomColor()}">
-        <h5 class="card-title">${card.title}</h5>
-        <img src="${card.img}" alt="${card.title}" />
-      </div>
-    `;
+  <div class="card" style="background-color: ${randomColor()}" data-query="${card.title}">
+    <h5 class="card-title">${card.title}</h5>
+    <img src="${card.img}" alt="${card.title}" />
+  </div>
+`;
+    document.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("click", () => {
+        const query = card.dataset.query;
+        if (query) fetchSearchResults(query);
+      });
+    });
 
     grid.appendChild(col);
   });
@@ -81,7 +90,7 @@ function randomColor() {
   ];
   return colors[Math.floor(Math.random() * colors.length)];
 }
-searchBtn.addEventListener("click", () => {
+searchBtn.addEventListener("click", function () {
   const query = searchInput.value.trim();
   if (query) fetchSearchResults(query);
 });

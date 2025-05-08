@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Arial" sans-serif;
+  font-weight: 500;
   background-color: #121212;
   color: white;
 }
@@ -15,7 +16,8 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 8em;
+  font-style: bold;
 }
 
 .grid-container {
@@ -44,7 +46,8 @@ header h1 {
 }
 
 .card h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-style: bold;
   z-index: 1;
 }
 
