@@ -10,62 +10,39 @@ const API_OPTIONS = {
     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
   },
 };
+
+async function fetchSearchResults(query) {
+  try {
+    const response = await fetch(`${API_URL}${query}`, API_OPTIONS);
+    if (!response.ok) throw new Error("Errore nella fetch");
+    const data = await response.json();
+    renderResults(data.data);
+  } catch (error) {
+    console.error("Errore nella ricerca:", error);
+    resultsContainer.innerHTML = `<p>Qualcosa è andato storto. Riprova più tardi.</p>`;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.getElementById("grid");
 
   const categories = [
-    {title: "", img: "./assets/imgs/search/image-1.jpeg"},
-    {title: "", img: "./assets/imgs/search/image-2.jpg"},
-    {title: "", img: "./assets/imgs/search/image-3.jpg"},
-    {title: "", img: "./assets/imgs/search/image-4.jpg"},
-    {title: "", img: "./assets/imgs/search/image-5.jpg"},
-    {title: "", img: "./assets/imgs/search/image-6.jpg"},
-    {title: "", img: "./assets/imgs/search/image-7.jpg"},
-    {title: "", img: "./assets/imgs/search/image-8.jpg"},
-    {title: "", img: "./assets/imgs/search/image-9.jpg"},
-    {title: "", img: "./assets/imgs/search/image-10.jpg"},
-    {title: "", img: "./assets/imgs/search/image-11.jpg"},
-    {title: "", img: "./assets/imgs/search/image-12.jpg"},
-    {title: "", img: "./assets/imgs/search/image-13.jpeg"},
-    {title: "", img: "./assets/imgs/search/image-14.jpg"},
-    {title: "", img: "./assets/imgs/search/image-15.jpg"},
-    {title: "", img: "./assets/imgs/search/image-16.jpg"},
-    {title: "", img: "./assets/imgs/search/image-17.jpg"},
-    {title: "", img: "./assets/imgs/search/image-18.jpg"},
-    {title: "", img: "./assets/imgs/search/image-19.jpg"},
-    {title: "", img: "./assets/imgs/search/image-20.jpg"},
-    {title: "", img: "./assets/imgs/search/image-21.jpg"},
-    {title: "", img: "./assets/imgs/search/image-22.jpg"},
-    {title: "", img: "./assets/imgs/search/image-23.jpg"},
-    {title: "", img: "./assets/imgs/search/image-24.jpg"},
-    {title: "", img: "./assets/imgs/search/image-25.jpeg"},
-    {title: "", img: "./assets/imgs/search/image-26.jpg"},
-    {title: "", img: "./assets/imgs/search/image-27.jpg"},
-    {title: "", img: "./assets/imgs/search/image-28.jpg"},
-    {title: "", img: "./assets/imgs/search/image-29.jpg"},
-    {title: "", img: "./assets/imgs/search/image-30.jpg"},
-    {title: "", img: "./assets/imgs/search/image-31.jpg"},
-    {title: "", img: "./assets/imgs/search/image-32.jpg"},
-    {title: "", img: "./assets/imgs/search/image-33.jpg"},
-    {title: "", img: "./assets/imgs/search/image-34.jpg"},
-    {title: "", img: "./assets/imgs/search/image-35.jpg"},
-    {title: "", img: "./assets/imgs/search/image-36.jpg"},
-    {title: "", img: "./assets/imgs/search/image-37.jpeg"},
-    {title: "", img: "./assets/imgs/search/image-38.jpg"},
-    {title: "", img: "./assets/imgs/search/image-39.jpg"},
-    {title: "", img: "./assets/imgs/search/image-40.jpg"},
-    {title: "", img: "./assets/imgs/search/image-41.jpg"},
-    {title: "", img: "./assets/imgs/search/image-42.png"},
-    {title: "", img: "./assets/imgs/search/image-43.png"},
-    {title: "", img: "./assets/imgs/search/image-44.png"},
-    {title: "", img: "./assets/imgs/search/image-45.jpeg"},
-    {title: "", img: "./assets/imgs/search/image-46.jpeg"},
-    {title: "", img: "./assets/imgs/search/image-47.jpg"},
-    {title: "", img: "./assets/imgs/search/image-48.jpeg"},
-    {title: "", img: "./assets/imgs/search/image-49.jpg"},
-    {title: "", img: "./assets/imgs/search/image-50.jpg"},
-    {title: "", img: "./assets/imgs/search/image-51.jpg"},
-    {title: "", img: "./assets/imgs/search/image-52.jpg"},
+    {title: "Weekly", img: "./assets/imgs/search/image-1.jpeg"},
+    {title: "Podcasts", img: "./assets/imgs/search/image-2.jpg"},
+    {title: "Live Events", img: "./assets/imgs/search/image-3.jpg"},
+    {title: "Made for You", img: "./assets/imgs/search/image-4.jpg"},
+    {title: "New Releases", img: "./assets/imgs/search/image-5.jpg"},
+    {title: "San Remo Festival", img: "./assets/imgs/search/image-6.jpg"},
+    {title: "Latin", img: "./assets/imgs/search/image-7.jpg"},
+    {title: "Top Albums", img: "./assets/imgs/search/image-8.jpg"},
+    {title: "Top Artists", img: "./assets/imgs/search/image-9.jpg"},
+    {title: "Top Podcasts", img: "./assets/imgs/search/image-10.jpg"},
+    {title: "Top Genres", img: "./assets/imgs/search/image-11.jpg"},
+    {title: "Top Playlists", img: "./assets/imgs/search/image-12.jpg"},
+    {title: "Top Music Videos", img: "./assets/imgs/search/image-13.jpeg"},
+    {title: "Top Radio", img: "./assets/imgs/search/image-14.jpg"},
+    {title: "Top Charts", img: "./assets/imgs/search/image-15.jpg"},
+    {title: "Top Songs", img: "./assets/imgs/search/image-16.jpg"},
   ];
 
   categories.forEach(card => {
@@ -104,3 +81,7 @@ function randomColor() {
   ];
   return colors[Math.floor(Math.random() * colors.length)];
 }
+searchBtn.addEventListener("click", () => {
+  const query = searchInput.value.trim();
+  if (query) fetchSearchResults(query);
+});
