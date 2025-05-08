@@ -17,7 +17,7 @@ const generateAlbumsCards = function (array) {
             <div class="card h-100 d-flex flex-column border-3 bg-transparent text-white border-0 p-2">
             <img src="${element.album.cover_medium}" class="card-img-top mx-auto" alt="album image" style="width:80px,height:80px">
             <div class="card-body d-flex flex-column ">
-              <a href="album.html?albumId=${element.album.id}" class="text-decoration-none text-white "><p class="card-title mb-0 ">${element.album.title}</p></a>
+              <a href="album.html?album=${element.album.id}" class="text-decoration-none text-white "><p class="card-title mb-0 ">${element.album.title}</p></a>
               <a href="artist.html?artistId=${element.artist.id}" class="text-decoration-none text-white-50"><p class="card-text small ">${element.artist.name}</p></a>
             </div>
           </div>
@@ -63,11 +63,15 @@ const generateListChart = function (array) {
           <img src="${element.artist.picture_small}" class="img-fluid"> 
         </div> 
         <div> 
-          <h6 class='mb-0 text-light '>${element.album.title}  </h6>
-          <p class='small mt-0 grey-font'>${element.artist.name}</p>
+          <a id="album-btn" class="text-decoration-none text-white fw-bold" href="album.html?album=${element.album.id}"> 
+            <h6 class="mb-0 text-light">${element.album.title}</h6>
+          </a>
+
+          <a id="artist-btn" class='text-decoration-none small mt-0 grey-font fw-light' href="artist.html?artistId=${element.artist.id}">${element.artist.name}</a>
         </div> 
       </div>
-    </a>
+      </a>
+    
     `;
     ul.appendChild(newLi);
   });

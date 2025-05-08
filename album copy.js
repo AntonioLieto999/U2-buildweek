@@ -1,11 +1,15 @@
 import { token } from "./token.js";
 
+// const URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 const host = "deezerdevs-deezer.p.rapidapi.com";
 
-const params = new URLSearchParams(window.location.search);
-const idAlbum = params.get("album");
+// const params = new URLSearchParams(window.location.search);
+// const idAlbum = params.get("album");
 
+const idAlbum = "75621062";
 const albumTracklist = " https://deezerdevs-deezer.p.rapidapi.com/album/" + idAlbum;
+
+// console.log(albumTracklist);
 
 const getTrackList = () => {
   fetch(albumTracklist, {
@@ -104,35 +108,10 @@ const getTrackList = () => {
         newRow.appendChild(divColFour);
         newRow.appendChild(divColTwo);
       });
-      generateListChart(allArtist);
     })
     .catch(error);
   console.error("Errore nella fetch:", error);
 };
-
-const generateListChart = function (array) {
-  const ul = document.getElementById("random-songs");
-  ul.innerHTML = ""; // Pulisce la lista esistente
-  array.forEach((element) => {
-    const newLi = document.createElement("li");
-
-    console.log(element);
-    newLi.innerHTML = `
-    <a href="artist.html?artistId=${element.artist.id}" class='text-decoration-none'>
-    <div class='d-flex gap-3 rounded-2 p-2 artist-list'>
-      <div class='overflow-hidden' style='width: 2.5em'>
-          <img src="${element.album.cover_medium}" class="img-fluid">
-        </div>
-        <div>
-          <h6 class='mb-0 text-light '> ${element.album.title} </h6>
-          <p class='small mt-0'> ${element.artist.name}</p>
-        </div>
-      </div>
-    </a>`;
-    ul.appendChild(newLi);
-  });
-};
-
 window.onload = () => {
   // createDataArray();
   getTrackList();
