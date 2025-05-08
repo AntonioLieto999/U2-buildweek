@@ -22,13 +22,15 @@ const generateAlbumsCards = function (array) {
             </div>
           </div>
             `;
+
+    console.log(element.album);
     row.appendChild(newCol);
   });
 };
 
 const albumRandom = function (array) {
   const indexRandom = Math.floor(Math.random() * array.length);
-  console.log(indexRandom);
+  // console.log(indexRandom);
   let imgRandom = document.getElementById("imgMainAlbum");
   var imageUrl = array[indexRandom].album.cover_medium;
   imgRandom.setAttribute("src", imageUrl);
@@ -37,7 +39,7 @@ const albumRandom = function (array) {
   let newDiv = document.createElement("div");
   newDiv.innerHTML = `
       <p>ALBUM</p>
-      <a href="album.html?albumId=${array[indexRandom].album.id}" class="text-decoration-none text-white "><h1>${array[indexRandom].title_short}</h1></a>
+      <a href="album.html?albumId=${array[indexRandom].album.id}" class="text-decoration-none text-white "><h1>${array[indexRandom].album.title}</h1></a>
       <a href="artist.html?artistId=${array[indexRandom].artist.id}" class="text-decoration-none text-white "><p>${array[indexRandom].artist.name}</p></a>
       <p>Ascolta il nuovo singolo di <span><a href="artist.html?artistId=${array[indexRandom].artist.id}" class="text-decoration-none text-white ">${array[indexRandom].artist.name}</a></span></p>
       <div>
@@ -48,6 +50,7 @@ const albumRandom = function (array) {
     `;
   randomAlbum.appendChild(newDiv);
 };
+
 const generateListChart = function (array) {
   const ul = document.getElementById("random-songs");
   ul.innerHTML = ""; // Pulisce la lista esistente
