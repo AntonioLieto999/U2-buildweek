@@ -1,7 +1,9 @@
-// import { token } from "./token.js";
+import { token } from "./token.js";
+const param = new URLSearchParams(window.location.search);
+const artistId = param.get("artistId");
 
-const artistList = "https://deezerdevs-deezer.p.rapidapi.com/artist/13612387";
-const artistTracklist = "https://striveschool-api.herokuapp.com/api/deezer/artist/13612387/top?limit=10";
+const artistList = "https://deezerdevs-deezer.p.rapidapi.com/artist/" + artistId;
+const artistTracklist = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId + "/top?limit=10";
 const rapidHost = "deezerdevs-deezer.p.rapidapi.com";
 const rapidKey = "ded3d84784msh38de646f264b36dp1038e9jsn039396fe0728";
 
@@ -14,7 +16,7 @@ const getArtist = () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "x-rapidapi-key": rapidKey,
+      "x-rapidapi-key": token,
       "x-rapidapi-host": rapidHost,
     },
   })
@@ -41,7 +43,7 @@ const getTracklist = () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "x-rapidapi-key": rapidKey,
+      "x-rapidapi-key": token,
       "x-rapidapi-host": rapidHost,
     },
   })
@@ -58,11 +60,11 @@ const getTracklist = () => {
       return resp.json();
     })
     .then((track) => {
+      console.log(track);
       const maxTracks = 5;
 
-      for (i = 0; i < track.data.length; i++) {
+      for (let i = 0; i < track.data.length; i++) {
         const trackArray = track.data[i];
-
         const singleTrackDiv = document.createElement("div");
         singleTrackDiv.className = "one-track d-flex align-items-center grey-font";
         singleTrackDiv.id = "one-track";
