@@ -19,6 +19,12 @@ body {
 #imgAlbum {
   width: 100%;
   object-fit: cover;
+  margin: 1rem;
+}
+#imgArtist {
+  max-width: 5%;
+  border-radius: 50%;
+  margin-right: 0.5rem;
 }
 
 #playId {
