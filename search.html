@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify Clone - Search</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="circular-font.css" />
     <link rel="stylesheet" href="style.css" />
+  
+
+  
   </head>
   <body>
   <header>
+    
         <img src="./assets/imgs/logo.svg" alt="Spotify Logo" class="logo" />
       </header>
    <nav class="navbar">
@@ -21,19 +28,36 @@
         </ul>   
         
       <h1>Search</h1>
-    </header>
+      <div class="search-bar">
+        <input type="text" placeholder="What do you want to play?" />
+        <button type="button" class="btn btn-primary">Search</button>
 
     <main>
-      <section class="search-bar">
-        <input type="text" id="searchInput" placeholder="Cerca un artista, album o canzone..." />
-        <button id="searchBtn">Cerca</button>
-      </section>
-
-      <section id="resultsContainer" class="results-grid">
-        <div id="results"></div>
-      </section>
-    </main>
-
-    <script src="search.js"></script>
+      <main class="main-search p-4">
+        <h2 class="text-white text-2xl mb-6 font-bold">Browse all</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <!-- Card esempio -->
+          <<div class="card">
+            <div class="image-container">
+              <img src="https://via.placeholder.com/300x200" alt="immagine" />
+            </div>
+            <div class="card-content">
+              <h2>Titolo</h2>
+              <p>Descrizione della card.</p>
+            </div>
+          </div>
+          
+      
+          <div class="category-card bg-green-800 relative rounded-lg p-4 overflow-hidden cursor-pointer">
+            <h3 class="text-white text-lg font-bold z-10 relative">Podcasts</h3>
+            <img src="https://i.scdn.co/image/ab6765630000ba8a6b983628b7d76f0f1c4421a7" 
+                 alt="Podcasts" 
+                 class="category-image" />
+          </div>
+      
+          <!-- Aggiungi altre card simili... -->
+        </div>
+      </main>
+    <script src="script.js"></script>
   </body>
 </html>

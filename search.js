@@ -104,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
     grid.appendChild(col);
   });
 
-  // Attiva evento click sulle card
   document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("click", () => {
       const query = card.dataset.query;
@@ -113,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Eventuale ricerca manuale
 searchBtn.addEventListener("click", function () {
   const query = searchInput.value.trim();
   if (query) fetchSearchResults(query);
