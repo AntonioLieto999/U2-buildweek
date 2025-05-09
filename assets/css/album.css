@@ -1,0 +1,86 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Circular";
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  margin: 0;
+}
+
+#titleSong {
+  font-weight: 800;
+}
+
+#center-album {
+  background: linear-gradient(#debf50, #000000);
+  padding-top: 1.5rem;
+}
+
+#imgAlbum {
+  width: 100%;
+  object-fit: cover;
+}
+#imgArtist {
+  max-width: 1.7rem;
+  border-radius: 50%;
+}
+
+#playId {
+  max-width: 30%;
+}
+
+#list-bg {
+  background: linear-gradient(#5b4f20, #000000);
+}
+
+.black-to-transparent {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(18, 18, 18, 1));
+}
+
+.heading-titles-font {
+  color: #b3b3b3;
+}
+
+#accountId,
+.dropdown-menu,
+.dropdown-item {
+  background-color: #000000ca;
+  padding: 2px;
+  border-radius: 5px;
+  color: white;
+}
+#accountId {
+  border-radius: 20px;
+}
+
+#leftArrow,
+#rightArrow {
+  max-width: 100%;
+}
+
+.grey-font {
+  color: #9b9a9a;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #585858;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
