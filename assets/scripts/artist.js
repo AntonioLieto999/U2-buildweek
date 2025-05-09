@@ -1,4 +1,4 @@
-import { token } from "./token.js";
+import { token } from "../../token.js";
 const param = new URLSearchParams(window.location.search);
 const artistId = param.get("artistId");
 
@@ -124,7 +124,7 @@ const getTracklist = () => {
 
       const likedSongsIcon = document.createElement("div");
       likedSongsIcon.className = "liked-songs-icon position-absolute";
-      likedSongsIcon.innerHTML = `<img src="heart.png" alt="liked songs icon">`;
+      likedSongsIcon.innerHTML = `<img src="./assets/imgs/main/heart.png" alt="liked songs icon">`;
 
       const likedSongsTextDiv = document.createElement("div");
 
