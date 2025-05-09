@@ -75,7 +75,7 @@ const getTrackList = () => {
         durataAlbum.innerText = duration;
 
         const divColOne = document.createElement("div");
-        divColOne.className = "col-1 d-flex";
+        divColOne.className = "col-1 d-flex opacity-50 justify-content-end";
         divColOne.innerText = index + 1;
 
         const divColFive = document.createElement("div");
@@ -88,7 +88,7 @@ const getTrackList = () => {
         const firstP = document.createElement("a");
         firstP.innerText = artistName;
         firstP.href = "artist.html?artistId=" + artistId;
-        firstP.className = "text-decoration-none text-white";
+        firstP.className = "text-decoration-none text-white opacity-50";
 
         const divColFour = document.createElement("div");
         divColFour.className = "col-4";
