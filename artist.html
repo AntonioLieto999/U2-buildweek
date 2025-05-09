@@ -10,7 +10,10 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
     <link rel="stylesheet" href="./assets/css/artist.css" />
     <script src="token.js"></script>
@@ -34,16 +37,19 @@
                 </li>
                 <li>
                   <a href="#" class="link-underline link-underline-opacity-0">
-                    <i class="bi bi-search fs-4 me-3 grey-font"></i>
-                    <span class="grey-font fw-bold">Cerca</span>
-                  </a>
-                  <a href="#" class="link-underline link-underline-opacity-0"> </a>
+                    <span>Cerca</span></a
+                  >
                   <div class="ps-2 d-none d-inline-block">
                     <div class="d-flex gap-3 align-items-center w-100">
-                      <input id="inputCerca" type="text" class="form-control bg-dark text-white p-1 border-0" placeholder="Film, genere, ecc..." />
-                      <button id="searchButton" class="btn btn-dark text-white rounded-3 p-1 px-2">Cerca</button>
-                      <input id="inputCerca" type="text" class="form-control bg-dark text-white p-1 border-0" placeholder="Film, genere, ecc..." />
-                      <button id="searchButton" class="btn btn-dark text-white rounded-3 p-1 px-2">Cerca</button>
+                      <input
+                        id="inputCerca"
+                        type="text"
+                        class="form-control bg-dark text-white p-1 border-0"
+                        placeholder="Film, genere, ecc..."
+                      />
+                      <button id="searchButton" class="btn btn-dark text-white rounded-3 p-1 px-2">
+                        Cerca
+                      </button>
                     </div>
                   </div>
                 </li>
@@ -61,20 +67,29 @@
               <ul class="d-flex flex-column gap-3 list-unstyled">
                 <li>
                   <a href="#" class="text-decoration-none">
-                    <img class="rounded-1 me-3" src="./assets/imgs/main/create-playlist.jpg" alt="create playlist" width="25px" />
+                    <img
+                      class="rounded-1 me-3"
+                      src="./assets/imgs/main/create-playlist.jpg"
+                      alt="create playlist"
+                      width="25px"
+                    />
                     <span class="fw-bold grey-font">Crea playlist</span>
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0">
-                    <img class="rounded-1 me-3" src="./assets/imgs/main/liked-songs.jpg" alt="favourite songs" width="25px" />
-                    <span class="fw-bold grey-font">Brani che ti piacciono</span>
-                  </a>
+                  <a href="#" class="link-underline link-underline-opacity-0"
+                    ><span>Brani che ti piacciono</span></a
+                  >
                 </li>
                 <li>
                   <a href="#" class="link-underline link-underline-opacity-0">
-                    <img class="rounded-1 me-3" src="./assets/imgs/main/your-episodes.jpg" alt="your episodes" width="25px" />
+                    <img
+                      class="rounded-1 me-3"
+                      src="./assets/imgs/main/your-episodes.jpg"
+                      alt="your episodes"
+                      width="25px"
+                    />
                     <span class="fw-bold grey-font">I tuoi episodi</span>
                   </a>
                 </li>
@@ -83,7 +98,10 @@
           </section>
           <section class="h-100">
             <div class="py-3 overflow-y-scroll h-100" id="scrollbar">
-              <ul id="random-songs" class="list-group list-unstyled d-flex flex-column gap-0 p-3 grey-font lh-lg">
+              <ul
+                id="random-songs"
+                class="list-group list-unstyled d-flex flex-column gap-0 p-3 grey-font lh-lg"
+              >
                 <li><h4 class="text-white">Le tue playlist</h4></li>
                 <li>early stage emily syndrome (sett-ott 2022)</li>
                 <li>Be The Young</li>
@@ -150,7 +168,10 @@
         </aside>
 
         <!--Colonna centrale-->
-        <div class="col-12 col-md-9 col-xl-7 overflow-y-scroll overflow-x-hidden vh-100 px-0 mx-0 main-bg" id="center">
+        <div
+          class="col-12 col-md-9 col-xl-7 overflow-y-scroll overflow-x-hidden vh-100 px-0 mx-0 main-bg"
+          id="center"
+        >
           <div class="col-12 text-white">
             <div class="position-relative">
               <img class="main-image" src="placeholder.jpg" alt="placeoholder" />
@@ -167,7 +188,9 @@
           <div class="row p-4 text-white gx-5">
             <div class="col-12 d-flex align-items-center gap-4">
               <img id="play-btn" src="play-button.png" alt="play button" />
-              <button id="follow-btn" class="btn btn-outline-light text-uppercase fw-bold">following</button>
+              <button id="follow-btn" class="btn btn-outline-light text-uppercase fw-bold">
+                following
+              </button>
               <i class="bi bi-three-dots text-white fs-3"></i>
             </div>
 
@@ -179,7 +202,11 @@
               <div id="song-list" class="row gy-3 tracks ps-4 mb-4"></div>
 
               <!-- view more button -->
-              <a id="view-more-btn" class="text-decoration-none text-uppercase fw-bold ps-4 small-font grey-font">visualizza altro</a>
+              <a
+                id="view-more-btn"
+                class="text-decoration-none text-uppercase fw-bold ps-4 small-font grey-font"
+                >visualizza altro</a
+              >
             </div>
 
             <!-- right div "BRANI CHE TI PIACCIONO" -->
@@ -187,7 +214,10 @@
               <p class="fs-3 fw-bold ms-lg-5">Brani che ti piacciono</p>
 
               <!-- dynamic liked songs -->
-              <div id="right-side-liked-songs" class="d-flex liked-songs align-items-center mt-4 ms-lg-5"></div>
+              <div
+                id="right-side-liked-songs"
+                class="d-flex liked-songs align-items-center mt-4 ms-lg-5"
+              ></div>
             </div>
           </div>
         </div>
@@ -207,17 +237,25 @@
             <section class="ps-xl-2 pt-4 ps-lg-0 pe-3">
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-3 align-items-start">
-                  <img src="assets/imgs/main/first-friend.png" alt="friend 1" width="40px" style="border-radius: 200px" />
+                  <img
+                    src="assets/imgs/main/first-friend.png"
+                    alt="friend 1"
+                    width="40px"
+                    style="border-radius: 200px"
+                  />
                   <div class="d-flex flex-column small">
-                    <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Ben D'Nee</h6></a>
-
-                    <span class="d-flex flex-column">
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">"The Sound of Silence"</p></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">by Simon & Garfunkel</p></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"
+                      ><h6>Guido Dirado</h6></a
+                    >
+                    <span class="d-flex">
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p class="mb-0 small">Nome canzone</p></a
+                      >
                     </span>
-                    <span class="d-flex gap-1 mt-2">
-                      <a href="#" class="link-underline link-underline-opacity-0"><i class="bi bi-disc grey-font"></i></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="grey-font">Aimed to Kill</p></a>
+                    <span class="d-flex gap-1">
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p>Nome album</p></a
+                      >
                     </span>
                   </div>
                 </div>
@@ -225,33 +263,53 @@
               </div>
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-3 align-items-start">
-                  <img src="assets/imgs/main/second-friend.jpg" alt="friend 1" width="40px" height="40px" style="border-radius: 600px; object-fit: cover" />
+                  <img
+                    src="assets/imgs/main/second-friend.jpg"
+                    alt="friend 1"
+                    width="40px"
+                    height="40px"
+                    style="border-radius: 600px; object-fit: cover"
+                  />
                   <div class="d-flex flex-column small">
-                    <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Arya Ready</h6></a>
-                    <span class="d-flex flex-column">
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">"You Don't Own Me"</p></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">by Lesley Gore</p></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"
+                      ><h6>Felice Micio</h6></a
+                    >
+                    <span class="d-flex">
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p class="mb-0 small">nome canzone</p></a
+                      >
                     </span>
-                    <span class="d-flex gap-1 mt-2">
-                      <a href="#" class="link-underline link-underline-opacity-0"><i class="bi bi-disc grey-font"></i></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="grey-font">Free as a Bird</p></a>
-                    </span>
+                    <span class="d-flex gap-1 small">
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p>nome album</p></a
+                      ></span
+                    >
                   </div>
                 </div>
                 <div><p class="time d-none d-xl-block">15 ore fa</p></div>
               </div>
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-3 align-items-start">
-                  <img src="assets/imgs/main/third-friend.jpg" alt="friend 1" width="40px" height="40px" style="border-radius: 600px; object-fit: cover" />
+                  <img
+                    src="assets/imgs/main/third-friend.jpg"
+                    alt="friend 1"
+                    width="40px"
+                    height="40px"
+                    style="border-radius: 600px; object-fit: cover"
+                  />
                   <div class="d-flex flex-column small">
-                    <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Ned D. Parted</h6></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"
+                      ><h6>Giovanni Piede</h6></a
+                    >
 
-                    <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">"Way Down We Go"</p></a>
-                    <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">by Kaleo</p></a>
+                    <a href="#" class="link-underline link-underline-opacity-0"
+                      ><p class="mb-0 small">nome canzone</p></a
+                    >
 
-                    <span class="d-flex gap-1 mt-2">
-                      <a href="#" class="link-underline link-underline-opacity-0"><i class="bi bi-music-note-beamed grey-font"></i></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class="grey-font">Sad songs for sad mood</p></a>
+                    <span class="d-flex gap-1">
+                      <a href="#" class="link-underline link-underline-opacity-0"
+                        ><p>nome album</p></a
+                      >
                     </span>
                   </div>
                 </div>
@@ -265,7 +323,11 @@
     <footer class="container-fluid bg-black mx-0 position-fixed bottom-0">
       <div class="row text-white flex-column flex-sm-row justify-content-center">
         <div class="col-12 col-sm-4 d-flex align-items-center text-white">
-          <img src="./assets/imgs/main/image-1.jpg" alt="Foto_prova" style="height: 55px; width: 60px" />
+          <img
+            src="./assets/imgs/main/image-1.jpg"
+            alt="Foto_prova"
+            style="height: 55px; width: 60px"
+          />
           <div class="mx-3 mt-1">
             <a href="#" class="text-decoration-none text-white">nome canzone</a>
             <p><a class="text-decoration-none text-secondary" href="#">artista</a></p>
@@ -279,7 +341,9 @@
           </div>
           <input type="range" min="1" max="100" value="1" class="slider" id="mySlider" />
         </div>
-        <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center">
+        <div
+          class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center"
+        >
           <div></div>
         </div>
       </div>
