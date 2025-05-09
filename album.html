@@ -25,7 +25,7 @@
             <nav>
               <ul class="d-flex flex-column gap-2 list-unstyled">
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0">
+                  <a href="./index.html" class="link-underline link-underline-opacity-0">
                     <i class="bi bi-house-door-fill fs-4 me-3 grey-font"></i>
                     <span class="grey-font fw-bold">Home</span>
                   </a>
@@ -81,7 +81,68 @@
           </section>
           <section class="h-100">
             <div class="py-3 overflow-y-scroll h-100" id="scrollbar">
-              <ul id="random-songs" class="list-group list-unstyled d-flex flex-column gap-0"></ul>
+              <ul id="random-songs" class="list-group list-unstyled d-flex flex-column gap-0 p-3 grey-font lh-lg">
+                <li><h4 class="text-white">Le tue playlist</h4></li>
+                <li>early stage emily syndrome (sett-ott 2022)</li>
+                <li>Be The Young</li>
+                <li>"..." cit. Kimiko (lug-ago 2022)</li>
+                <li>saggio vibes 💃🏻🩰</li>
+                <li>main character energy (mag-giu)</li>
+                <li>that fucking mood 🔪</li>
+                <li>VEE, CARLOTTA E GIACOMO VANNO A BOSIO</li>
+                <li>An Emily Winchester kind of mood 🔪</li>
+                <li>landing page (mar-apr 2022)</li>
+                <li>2021 lol</li>
+                <li>cosa cazzo vuol dire questa affermazione (gen-feb)</li>
+                <li>honey and glass (nov-dic 2021)</li>
+                <li>(Revenge) Trainig Arc</li>
+                <li>Lidia 🫱🏻‍🫲🏻 Emily</li>
+                <li>minecraft e nintendo switch (sep-oct 2021)</li>
+                <li>silvano d'orba? I hardly know her (lun - ago 2021)</li>
+                <li>Culo 2021</li>
+                <li>Frah Quintale Mix</li>
+                <li>Francesco Guccini Mix</li>
+                <li>meltdown estetico (feb-mar 2023)</li>
+                <li>Emily era un concetto, non una persona</li>
+                <li>mood: sparire a Parigi per sbaglio</li>
+                <li>trauma bonding vibes 🔥</li>
+                <li>Lacrime glitterate (feat. Lana Del Rey)</li>
+                <li>"Mi sento come in un coming-of-age" cit. me ieri</li>
+                <li>BOSIO 2: Il Ritorno</li>
+                <li>plot twist: sono io il villain</li>
+                <li>Non sto bene ma con stile</li>
+                <li>fuck around & find out energy (mag-lug 2023)</li>
+                <li>the audacity of hope (e anche del mio ex)</li>
+                <li>saturday night tristezza™</li>
+                <li>Questa è arte contemporanea, giuro</li>
+                <li>main quest: sopravvivere al lunedì</li>
+                <li>VEE E L'ARCO NARRATIVO DELLA REDENZIONE</li>
+                <li>"un giorno rideremo" (non oggi)</li>
+                <li>Bosio Cinematic Universe</li>
+                <li>Sad Girl Summer (con intermezzi trap)</li>
+                <li>diario sonoro di un crollo emotivo</li>
+                <li>le vibes del prequel che non volevi</li>
+                <li>questa è una crisi (apr-mag 2024)</li>
+                <li>Emily e le sue mille fasi lunari 🌒</li>
+                <li>non è una playlist, è una seduta di terapia</li>
+                <li>Be The Chaos (giù nel 2023)</li>
+                <li>cit. me stessa mentre mentivo</li>
+                <li>quel mood da domenica alle 19:47</li>
+                <li>drama in tre atti e una story</li>
+                <li>reboot emotivo fallito (giu-lug 2022)</li>
+                <li>VEE VA A BOSIO ANCORA?</li>
+                <li>sindrome da protagonista non richiesta</li>
+                <li>playlist per piangere in tram</li>
+                <li>Emily Winchester: Origins 🔪</li>
+                <li>trip mentale a tema vintage (nov-dic 2023)</li>
+                <li>“Non mi chiamate, sto vivendo”</li>
+                <li>giornata tipo: ansia e caffè</li>
+                <li>soundtrack di un disastro annunciato</li>
+                <li>CARLOTTA VA A BOSIO DA SOLA</li>
+                <li>lunedì, silvano d’orba e altri traumi</li>
+                <li>post-verità e post-sbornia (gen-feb 2023)</li>
+                <li>playlist che non ti giudica (ma dovrebbe)</li>
+              </ul>
             </div>
           </section>
         </aside>
@@ -108,10 +169,17 @@
                   </svg>
                 </button>
               </div>
-              <div class="col-3 p-0">
+              <div class="col-3 p-0 d-flex justify-content-end">
                 <div class="dropdown">
-                  <button id="accountId" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="./assets/imgs/search/image-1.jpeg" style="width: 15%; object-fit: cover; border-radius: 50%" alt="" /> Profilo Utente
+                  <button
+                    id="accountId"
+                    class="btn dropdown-toggle d-flex gap-3 align-items-center pe-3"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="border-radius: 300px"
+                  >
+                    <img src="./assets/imgs/main/profilo-utente.png" style="width: 30px; object-fit: cover; border-radius: 50%" alt="profilo" /> Lidia Nautilus
                   </button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Profilo</a></li>
@@ -121,67 +189,74 @@
                 </div>
               </div>
             </div>
-            <div class="row align-items-end">
+            <div class="row align-items-end gx-5 pt-5 pb-4">
               <div class="col-3">
-                <img id="imgAlbum" src="./assets/imgs/main/image-1.jpg" alt="imgAlbum" />
+                <img id="imgAlbum" src="./assets/imgs/main/image-1.jpg" alt="imgAlbum" style="box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px" />
               </div>
               <div class="col-md-9 d-flex-column align-items-end">
                 <h6 id="typeAlbum">ALBUM</h6>
                 <h2 id="titleSong">TITOLO DELLA CANZONE</h2>
-                <span><img id="imgArtist" src="./assets/imgs/main/image-14.jpg" alt="imgArtist" /></span><span id="nameArtist">Lorem ipsum dolor </span
-                ><span id="yearAlbum">Lorem ipsum dolor </span><span id="numOfSongs">Lorem ipsum dolor </span><span id="durata">Lorem ipsum dolor </span>
+                <div class="">
+                  <span><img class="me-1" id="imgArtist" src="./assets/imgs/main/image-14.jpg" alt="imgArtist" /></span>
+                  <span id="nameArtist" class="fw-bold me-1">Lorem ipsum dolor </span>
+                  <span class="me-1">•</span>
+                  <span id="yearAlbum" class="me-1">Lorem ipsum dolor </span>
+                  <span class="me-1">•</span>
+                  <span id="numOfSongs">Lorem ipsum dolor </span>
+                  <span id="durata" class="opacity-75">Lorem ipsum dolor </span>
+                </div>
               </div>
             </div>
           </div>
+          <div id="list-bg" class="container-fluid">
+            <div class="container">
+              <div id="tabBody" class="pt-5 pb-5">
+                <div class="d-flex gap-4">
+                  <img id="playId" src="./assets/imgs/main/play-button.png" alt="play" style="width: 50px" />
 
-          <div id="list-bg" class="container-fluid p-0">
-            <div id="tabBody">
-              <div class="d-flex align-items-left">
-                <button class="btn col-2">
-                  <img id="playId" src="./assets/imgs/main/play-button.png" alt="" />
-                </button>
-                <button class="btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-suit-heart" viewBox="0 0 16 16">
-                    <path
-                      d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"
-                    />
-                  </svg>
-                </button>
-                <button class="btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-                    <path
-                      fill-rule="evenodd"
-                      d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
-                    />
-                  </svg>
-                </button>
-                <button class="btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-three-dots" viewBox="0 0 16 16">
-                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div class="row bg-transparent p-0">
-              <div class="row">
-                <div class="col-1">#</div>
-                <div class="col-5"><h6>TITOLO</h6></div>
-                <div class="col-4"><h6>RIPRODUZIONI</h6></div>
-                <div class="col-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-                  </svg>
+                  <button class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-suit-heart" viewBox="0 0 16 16">
+                      <path
+                        d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-three-dots" viewBox="0 0 16 16">
+                      <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-              <div id="newRow" class="row d-flex align-items-center">
-                <div class="col-1 d-flex">#</div>
-                <div class="col-5">
-                  <h6>Nome canzone</h6>
-                  <p>Artista</p>
+              <div class="">
+                <div class="row">
+                  <div class="col-1">#</div>
+                  <div class="col-5"><h6>TITOLO</h6></div>
+                  <div class="col-4"><h6>RIPRODUZIONI</h6></div>
+                  <div class="col-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                      <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                    </svg>
+                  </div>
                 </div>
-                <div class="col-4"><p>21055100152</p></div>
-                <div class="col-2"><p>120121</p></div>
+                <div id="newRow" class="row d-flex align-items-center">
+                  <div class="col-1 d-flex">#</div>
+                  <div class="col-5">
+                    <h6>Nome canzone</h6>
+                    <p>Artista</p>
+                  </div>
+                  <div class="col-4"><p>21055100152</p></div>
+                  <div class="col-2"><p>120121</p></div>
+                </div>
               </div>
             </div>
           </div>

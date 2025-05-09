@@ -45,26 +45,28 @@ const getTrackList = () => {
         const totSong = track.nb_tracks;
         const durationAlbum = track.duration / 60;
         const min = Math.floor(durationAlbum);
-        const seconds = Number(durationAlbum.toString().split(".")[1]);
-        const duration = min + " min e " + seconds + " sec..";
+        const seconds = Math.floor(Number(durationAlbum.toString()));
+        const duration = min + " min e " + seconds + " sec.";
         const realeseDate = track.release_date;
         const riprod = allArtist[index].rank;
         const timeSong = song.duration;
 
+        console.log(seconds);
+
         const imgALbum = document.getElementById("imgAlbum");
         imgALbum.src = albumImg;
-        const titleAlbum = document.getElementById("typeAlbum");
-        titleAlbum.innerText = albumTitle;
         const songTitle = document.getElementById("titleSong");
-        songTitle.innerText = songName;
+        songTitle.innerText = albumTitle;
+        songTitle.style.fontSize = "7rem";
+
         const imgArt = document.getElementById("imgArtist");
         imgArt.src = artistImg;
         const nameArtist = document.getElementById("nameArtist");
         nameArtist.innerText = artistName + " ";
         const yearAlbum = document.getElementById("yearAlbum");
-        yearAlbum.innerText = "• " + realeseDate + " ";
+        yearAlbum.innerText = realeseDate + " ";
         const numOfSongs = document.getElementById("numOfSongs");
-        numOfSongs.innerText = "• " + totSong + " brani, ";
+        numOfSongs.innerText = totSong + " brani, ";
         const durataAlbum = document.getElementById("durata");
         durataAlbum.innerText = duration;
 
@@ -104,33 +106,9 @@ const getTrackList = () => {
         newRow.appendChild(divColFour);
         newRow.appendChild(divColTwo);
       });
-      generateListChart(allArtist);
     })
     .catch(error);
   console.error("Errore nella fetch:", error);
-};
-
-const generateListChart = function (array) {
-  const ul = document.getElementById("random-songs");
-  ul.innerHTML = ""; // Pulisce la lista esistente
-  array.forEach((element) => {
-    const newLi = document.createElement("li");
-
-    console.log(element);
-    newLi.innerHTML = `
-    <a href="artist.html?artistId=${element.artist.id}" class='text-decoration-none'>
-    <div class='d-flex gap-3 rounded-2 p-2 artist-list'>
-      <div class='overflow-hidden' style='width: 2.5em'>
-          <img src="${element.album.cover_medium}" class="img-fluid">
-        </div>
-        <div>
-          <h6 class='mb-0 text-light '> ${element.album.title} </h6>
-          <p class='small mt-0'> ${element.artist.name}</p>
-        </div>
-      </div>
-    </a>`;
-    ul.appendChild(newLi);
-  });
 };
 
 window.onload = () => {
