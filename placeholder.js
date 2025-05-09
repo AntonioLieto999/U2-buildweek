@@ -142,8 +142,6 @@ const getTracklist = () => {
       likedSongsTextDiv.appendChild(likedSongsCount);
       likedSongsTextDiv.appendChild(likedSongsFromArtist);
 
-      generateListChart(track.data);
-
       viewMoreBtn.onclick = function () {
         const hiddenTracks = document.querySelectorAll(".hidden-track");
         const allTracks = document.querySelectorAll(".one-track");
@@ -165,29 +163,6 @@ const getTracklist = () => {
       };
     })
     .catch((error) => console.log(error));
-};
-
-const generateListChart = function (array) {
-  const ul = document.getElementById("random-songs");
-  ul.innerHTML = ""; // Pulisce la lista esistente
-  array.forEach((element) => {
-    const newLi = document.createElement("li");
-
-    console.log(element);
-    newLi.innerHTML = `
-    <a href="artist.html?artistId=${element.artist.id}" class='text-decoration-none'>
-    <div class='d-flex gap-3 rounded-2 p-2 artist-list'>
-      <div class='overflow-hidden' style='width: 2.5em'>
-          <img src="${element.album.cover_medium}" class="img-fluid">
-        </div>
-        <div>
-          <h6 class='mb-0 text-light '> ${element.album.title} </h6>
-          <p class='small mt-0'> ${element.artist.name}</p>
-        </div>
-      </div>
-    </a>`;
-    ul.appendChild(newLi);
-  });
 };
 
 window.onload = function () {

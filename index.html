@@ -4,10 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>U2-W2-build week</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,30 +18,28 @@
       font-family: "Circular";
       font-weight: 300;
     }
-  .grey-font {
-    color: #9b9a9a;
-  }
+    .grey-font {
+      color: #9b9a9a;
+    }
 
-  
-::-webkit-scrollbar {
-  width: 10px;
-}
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: black;
-}
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: black;
+    }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #585858;
-}
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #585858;
+    }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
   </style>
   <body style="background-color: #202020">
     <main class="container-fluid">
@@ -57,9 +52,9 @@
             <nav>
               <ul class="d-flex flex-column gap-2 list-unstyled">
                 <li>
-                  <a href="#" class="link-underline link-underline-opacity-0">
-                    <i class="bi bi-house-door-fill fs-4 me-3 grey-font"></i>
-                    <span class="grey-font fw-bold">Home</span>
+                  <a href="#" class="text-decoration-none text-white">
+                    <i class="bi bi-house-door-fill fs-4 me-3"></i>
+                    <span class="fw-bold">Home</span>
                   </a>
                 </li>
                 <li>
@@ -79,9 +74,9 @@
                 </li>
                 <li>
                   <a href="#" class="link-underline link-underline-opacity-0">
-                    <i class="bi bi-collection fs-4 me-3 grey-font"></i> 
+                    <i class="bi bi-collection fs-4 me-3 grey-font"></i>
                     <span class="grey-font fw-bold">La tua libreria</span>
-                    </a>
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -91,20 +86,20 @@
               <ul class="d-flex flex-column gap-3 list-unstyled">
                 <li>
                   <a href="#" class="text-decoration-none">
-                    <img class="rounded-1 me-3" src="./assets/imgs/main/create-playlist.jpg" alt="create playlist" width="25px">
-                 <span class="fw-bold grey-font">Crea playlist</span>            
+                    <img class="rounded-1 me-3" src="./assets/imgs/main/create-playlist.jpg" alt="create playlist" width="25px" />
+                    <span class="fw-bold grey-font">Crea playlist</span>
                   </a>
                 </li>
-             
+
                 <li>
                   <a href="#" class="link-underline link-underline-opacity-0">
-                    <img class="rounded-1 me-3" src="./assets/imgs/main/liked-songs.jpg" alt="favourite songs" width="25px">
+                    <img class="rounded-1 me-3" src="./assets/imgs/main/liked-songs.jpg" alt="favourite songs" width="25px" />
                     <span class="fw-bold grey-font">Brani che ti piacciono</span>
                   </a>
                 </li>
                 <li>
                   <a href="#" class="link-underline link-underline-opacity-0">
-                    <img class="rounded-1 me-3" src="./assets/imgs/main/your-episodes.jpg" alt="your episodes" width="25px">
+                    <img class="rounded-1 me-3" src="./assets/imgs/main/your-episodes.jpg" alt="your episodes" width="25px" />
                     <span class="fw-bold grey-font">I tuoi episodi</span>
                   </a>
                 </li>
@@ -124,7 +119,6 @@
           <div class="row pt-2 justify-content-between pb-3" id="navbar">
             <div class="col-3 d-flex align-items-center"></div>
             <div class="col-9 d-flex justify-content-end align-items-center pe-3">
-              
               <button class="fs-4 border-0 me-3 d-none d-sm-block" id="buttonIscriviti">Iscriviti</button>
               <div class="dropdown" id="buttonAccedi">
                 <button
@@ -147,28 +141,12 @@
                     <input type="password" class="form-control" id="password" placeholder="Password" />
                     <input type="password" class="form-control" id="password" placeholder="Password" />
                   </div>
-                  <button
-                    type="submit"
-                    class="btn bg-dark text-white"
-                    onclick="event.preventDefault(); login();"
-                  >
-                    Login
-                  </button>
+                  <button type="submit" class="btn bg-dark text-white" onclick="event.preventDefault(); login();">Login</button>
                 </form>
               </div>
               <div class="btn-group d-none" id="buttonLogged">
-                <button
-                  class="bg-black d-flex flex-row text-white rounded-5 border-0 me-3"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="./assets/imgs/search/image-31.jpg"
-                    alt="immagine profile"
-                    class="rounded-circle"
-                    style="width: 20px"
-                  />
+                <button class="bg-black d-flex flex-row text-white rounded-5 border-0 me-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="./assets/imgs/search/image-31.jpg" alt="immagine profile" class="rounded-circle" style="width: 20px" />
                   <p class="mb-0 ms-2 text-white">Lidia Nautilus</p>
                   <i class="bi bi-caret-down-fill fs-6"></i>
                 </button>
@@ -248,7 +226,6 @@
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-11.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-12.jpg" style="width: 30px; height: 30px" />
-            
                     </div>
                   </div>
                   <div class="row">
@@ -281,12 +258,10 @@
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-14.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-15.jpg" style="width: 30px; height: 30px" />
-                   
                     </div>
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-16.jpg" style="width: 30px; height: 30px" />
                       <img src="./assets/imgs/main/image-17.jpg" style="width: 30px; height: 30px" />
-                
                     </div>
                   </div>
                   <div class="row">
@@ -301,7 +276,6 @@
                   <div class="row flex-column me-1">
                     <div class="col d-flex ps-0">
                       <img src="./assets/imgs/main/image-18.jpg" style="width: 60px; height: 60px" />
-                   
                     </div>
                   </div>
                   <div class="row">
@@ -324,7 +298,6 @@
               </div>
             </div>
           </div>
-
         </div>
 
         <aside class="col-2 d-none d-lg-block bg-black vh-100 pe-3">
@@ -341,17 +314,17 @@
             <section class="ps-xl-2 pt-4 ps-lg-0 pe-3">
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-3 align-items-start">
-                  <img src="assets/imgs/main/first-friend.png" alt="friend 1" width="40px" style="border-radius: 200px;">
+                  <img src="assets/imgs/main/first-friend.png" alt="friend 1" width="40px" style="border-radius: 200px" />
                   <div class="d-flex flex-column small">
                     <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Ben D'Nee</h6></a>
-                   
+
                     <span class="d-flex flex-column">
                       <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">"The Sound of Silence"</p></a>
                       <a href="#" class="link-underline link-underline-opacity-0"><p class="mb-0 small grey-font">by Simon & Garfunkel</p></a>
                     </span>
                     <span class="d-flex gap-1 mt-2">
                       <a href="#" class="link-underline link-underline-opacity-0"><i class="bi bi-disc grey-font"></i></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class=" grey-font">Aimed to Kill</p></a>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="grey-font">Aimed to Kill</p></a>
                     </span>
                   </div>
                 </div>
@@ -359,7 +332,7 @@
               </div>
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-3 align-items-start">
-                  <img src="assets/imgs/main/second-friend.jpg" alt="friend 1" width="40px" height="40px" style="border-radius: 600px; object-fit: cover;">
+                  <img src="assets/imgs/main/second-friend.jpg" alt="friend 1" width="40px" height="40px" style="border-radius: 600px; object-fit: cover" />
                   <div class="d-flex flex-column small">
                     <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Arya Ready</h6></a>
                     <span class="d-flex flex-column">
@@ -368,7 +341,7 @@
                     </span>
                     <span class="d-flex gap-1 mt-2">
                       <a href="#" class="link-underline link-underline-opacity-0"><i class="bi bi-disc grey-font"></i></a>
-                      <a href="#" class="link-underline link-underline-opacity-0"><p class=" grey-font">Free as a Bird</p></a>
+                      <a href="#" class="link-underline link-underline-opacity-0"><p class="grey-font">Free as a Bird</p></a>
                     </span>
                   </div>
                 </div>
@@ -376,7 +349,7 @@
               </div>
               <div class="d-flex text-secondary justify-content-between pt-3">
                 <div class="d-flex gap-3 align-items-start">
-                  <img src="assets/imgs/main/third-friend.jpg" alt="friend 1" width="40px" height="40px" style="border-radius: 600px; object-fit: cover;">
+                  <img src="assets/imgs/main/third-friend.jpg" alt="friend 1" width="40px" height="40px" style="border-radius: 600px; object-fit: cover" />
                   <div class="d-flex flex-column small">
                     <a href="#" class="link-underline link-underline-opacity-0"><h6 class="grey-font">Ned D. Parted</h6></a>
 
@@ -399,8 +372,8 @@
     <footer class="container-fluid bg-black mx-0 position-fixed bottom-0">
       <div class="row text-white flex-column flex-sm-row justify-content-center">
         <div class="col-12 col-sm-4 d-flex align-items-center text-white">
-          
           <img src="./assets/imgs/main/image-1.jpg" alt="Foto_prova" style="height: 55px; width: 60px" />
+
           <div class="mx-3 mt-1">
             <a href="#" class="text-decoration-none text-white">nome canzone</a>
             <p><a class="text-decoration-none text-secondary" href="#">artista</a></p>
@@ -409,31 +382,19 @@
         </div>
         <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1">
           <div class="d-flex flex-row justify-content-between align-items-center">
-            <a href="#" class="text-decoration-none p-1"
-              ><i class="bi bi-shuffle text-secondary fs-5"></i
-            ></a>
-            <a href="#" class="text-decoration-none p-1"
-              ><i class="bi bi-chevron-bar-left text-secondary fs-3"></i
-            ></a>
+            <a href="#" class="text-decoration-none p-1"><i class="bi bi-shuffle text-secondary fs-5"></i></a>
+            <a href="#" class="text-decoration-none p-1"><i class="bi bi-chevron-bar-left text-secondary fs-3"></i></a>
             <div id="provatre">
-              <a href="#" class="text-decoration-none p-1 prova"
-                ><i class="provadue bi bi-play-circle-fill text-white fs-3"></i
-              ></a>
+              <a href="#" class="text-decoration-none p-1 prova"><i class="provadue bi bi-play-circle-fill text-white fs-3"></i></a>
             </div>
 
-            <a href="#" class="text-decoration-none p-1"
-              ><i class="bi bi-chevron-bar-right text-secondary fs-3"></i
-            ></a>
-            <a href="#" class="text-decoration-none p-1"
-              ><i class="bi bi-repeat text-secondary fs-5"></i
-            ></a>
+            <a href="#" class="text-decoration-none p-1"><i class="bi bi-chevron-bar-right text-secondary fs-3"></i></a>
+            <a href="#" class="text-decoration-none p-1"><i class="bi bi-repeat text-secondary fs-5"></i></a>
           </div>
           <input type="range" min="1" max="100" value="1" class="slider" id="mySlider" />
         </div>
-        <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center">
-        <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center">
-          <div></div>
-        </div>
+        <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center"></div>
+        <div class="col-12 col-sm-4 d-flex align-items-center flex-column mt-1 justify-content-center"></div>
       </div>
     </footer>
 
@@ -443,6 +404,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="./index.js" type="module"></script>
-    
   </body>
 </html>
