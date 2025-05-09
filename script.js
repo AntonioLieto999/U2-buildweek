@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const grid = document.getElementById("grid");
 
   const categories = [
-    {title: "Weekly", img: "./assets/imgs/search/image-1.jpeg"},
+    {title: "Weekly", img: "https://cdn-images.dzcdn.net/images/cover/71ee51ae24f911acedf0046fd526236f/250x250-000000-80-0-0.jpg"},
     {title: "Podcasts", img: "./assets/imgs/search/image-2.jpg"},
     {title: "Live Events", img: "./assets/imgs/search/image-3.jpg"},
     {title: "Made for You", img: "./assets/imgs/search/image-4.jpg"},
@@ -77,7 +77,7 @@ function randomColor() {
     "#1e3264",
     "#8c1932",
     "#148a08",
-    "#b49bc8",
+    "#f4a300",
     "#d37y8d",
     "#535353",
     "#e8115b",

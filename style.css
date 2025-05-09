@@ -6,6 +6,14 @@ body {
   color: white;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  background-color: #121212;
+}
+
 header {
   padding: 1rem;
   background-color: #121212;
@@ -72,4 +80,15 @@ header h1 {
   src: url(../fonts/CircularStd-Bold.otf);
   font-weight: 700;
   font-style: normal;
+}
+
+#barra {
+  font-family: "Helvetica, sans-serif";
+
+  max-width: 20%;
+  margin: 0 auto;
+  padding: 1rem;
+  justify-content: end;
+  display: flex;
+  align-items: normal;
 }
