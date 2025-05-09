@@ -14,14 +14,18 @@ const generateAlbumsCards = function (array) {
     const newCol = document.createElement("div");
     newCol.classList.add("col", "mb-4");
     newCol.innerHTML = `
-            <div class="card h-100 d-flex flex-column border-3 bg-transparent text-white border-0 p-2">
-            <img src="${element.album.cover_medium}" class="card-img-top mx-auto card-img" alt="album image" style="width:80px,height:80px">
-            <div class="card-body d-flex flex-column ">
-              <a href="album.html?album=${element.album.id}" class="text-decoration-none text-white "><p class="card-title mb-0 ">${element.album.title}</p></a>
-              <a href="artist.html?artistId=${element.artist.id}" class="text-decoration-none text-white-50"><p class="card-text small ">${element.artist.name}</p></a>
-            </div>
-          </div>
-            `;
+  <div class="card h-100 d-flex flex-column border-3 bg-transparent text-white border-0 p-2">
+    <img src="${element.album.cover_medium}" id="cardRandom" class="card-img-top mx-auto card-img" alt="Album Cover" data-album-id="${element.album.id}">
+    <div class="card-body d-flex flex-column">
+      <a href="album.html?albumId=${element.album.id}" class="text-decoration-none text-white">
+        <p class="card-title mb-0 text-white">${element.album.title}</p>
+      </a>
+      <a href="artist.html?artistId=${element.artist.id}" class="text-decoration-none text-white-50">
+        <p class="card-text small text-white">${element.artist.name}</p>
+      </a>
+    </div>
+  </div>
+`;
 
     console.log(element.album);
     row.appendChild(newCol);
@@ -95,9 +99,9 @@ const getAlbums = function (searchKeyword) {
       }
     })
     .then((json) => {
-      console.log("Dati ricevuti dall'API:", json.data); // Log dei dati ricevuti
+      console.log("Dati ricevuti dall'API:", json.data);
       if (json && json.data) {
-        generateAlbumsCards(json.data); // Passa i dati alla funzione
+        generateAlbumsCards(json.data);
         albumRandom(json.data);
         generateListChart(json.data);
       } else {
@@ -111,4 +115,16 @@ const getAlbums = function (searchKeyword) {
 
 document.addEventListener("DOMContentLoaded", function () {
   getAlbums();
+
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("card-img")) {
+      const albumId = event.target.getAttribute("data-album-id");
+
+      if (albumId) {
+        window.location.href = `album.html?albumId=${albumId}`;
+      } else {
+        console.error("ID album non trovato!");
+      }
+    }
+  });
 });
