@@ -1,30 +1,32 @@
-const searchBtn = document.getElementById("searchBtn");
-const searchInput = document.getElementById("searchInput");
-const resultsContainer = document.getElementById("resultsContainer");
-const grid = document.getElementById("grid");
-
-const API_URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
-const API_OPTIONS = {
-  method: "GET",
-  headers: {
-    "x-rapidapi-key": "20bdf23e00msh67850135a297dcap159dc5jsn5cee08722670",
-    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-  },
+import {token} from "./token.js";
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-btn");
+const resultsContainer = document.getElementById("results-container");
+const URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
+// const API_OPTIONS = {
+//   method: "GET",
+//   headers: {
+//     "x-rapidapi-key": "20bdf23e00msh67850135a297dcap159dc5jsn5cee08722670",
+//     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+//   },
+// };
+const picsImg = () => {
+  fetch(URL, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": token,
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+    },
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      } else if (response.ok) {
+        return response.json();
+      }
+    })
+    .then(data => {});
 };
-
-async function fetchSearchResults(query) {
-  try {
-    document.getElementById("grid").style.display = "none";
-
-    const response = await fetch(`${API_URL}${query}`, API_OPTIONS);
-    if (!response.ok) throw new Error("Errore nella fetch");
-    const data = await response.json();
-    renderResults(data.data);
-  } catch (error) {
-    console.error("Errore nella ricerca:", error);
-    resultsContainer.innerHTML = `<p>Qualcosa è andato storto. Riprova più tardi.</p>`;
-  }
-}
 
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.getElementById("grid");
@@ -71,15 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function randomColor() {
   const colors = [
-    "#e13300",
+    "#e13d40",
     "#1e3264",
     "#8c1932",
     "#148a08",
     "#b49bc8",
-    "#d84000",
+    "#d37y8d",
     "#535353",
     "#e8115b",
-    "#777",
+    "#77b300",
     "#006450",
     "#27856a",
     "#509bf5",
