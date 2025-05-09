@@ -38,6 +38,7 @@ const getTrackList = () => {
 
         const albumTitle = song.album.title;
         const artistName = song.artist.name;
+        const artistId = track.artist.id;
         const artistImg = track.artist.picture_small;
         const albumImg = song.album.cover_medium;
         const songName = song.title;
@@ -61,8 +62,11 @@ const getTrackList = () => {
 
         const imgArt = document.getElementById("imgArtist");
         imgArt.src = artistImg;
+
         const nameArtist = document.getElementById("nameArtist");
         nameArtist.innerText = artistName + " ";
+        nameArtist.href = "artist.html?artistId=" + artistId;
+
         const yearAlbum = document.getElementById("yearAlbum");
         yearAlbum.innerText = realeseDate + " ";
         const numOfSongs = document.getElementById("numOfSongs");
@@ -79,9 +83,12 @@ const getTrackList = () => {
 
         const h6 = document.createElement("h6");
         h6.innerText = songName;
+        h6.className = "mb-0";
 
-        const firstP = document.createElement("p");
+        const firstP = document.createElement("a");
         firstP.innerText = artistName;
+        firstP.href = "artist.html?artistId=" + artistId;
+        firstP.className = "text-decoration-none text-white";
 
         const divColFour = document.createElement("div");
         divColFour.className = "col-4";
@@ -90,7 +97,7 @@ const getTrackList = () => {
         secondP.innerText = riprod;
 
         const divColTwo = document.createElement("div");
-        divColTwo.className = "col-2";
+        divColTwo.className = "col-2 mb-4";
 
         const thirdP = document.createElement("p");
         thirdP.innerText = timeSong.toString().replace(/^(\d)/, "$1:") + "min";
@@ -98,8 +105,8 @@ const getTrackList = () => {
         divColTwo.appendChild(thirdP);
         divColFour.appendChild(secondP);
 
-        divColFive.appendChild(firstP);
         divColFive.appendChild(h6);
+        divColFive.appendChild(firstP);
 
         newRow.appendChild(divColOne);
         newRow.appendChild(divColFive);

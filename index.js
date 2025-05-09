@@ -17,7 +17,7 @@ const generateAlbumsCards = function (array) {
   <div class="card h-100 d-flex flex-column border-3 bg-transparent text-white border-0 p-2">
     <img src="${element.album.cover_medium}" id="cardRandom" class="card-img-top mx-auto card-img" alt="Album Cover" data-album-id="${element.album.id}">
     <div class="card-body d-flex flex-column">
-      <a href="album.html?albumId=${element.album.id}" class="text-decoration-none text-white">
+      <a href="album.html?album=${element.album.id}" class="text-decoration-none text-white">
         <p class="card-title mb-0 text-white">${element.album.title}</p>
       </a>
       <a href="artist.html?artistId=${element.artist.id}" class="text-decoration-none text-white-50">
@@ -43,7 +43,7 @@ const albumRandom = function (array) {
   let newDiv = document.createElement("div");
   newDiv.innerHTML = `
       <p>ALBUM</p>
-      <a href="album.html?albumId=${array[indexRandom].album.id}" class="text-decoration-none text-white "><h1>${array[indexRandom].album.title}</h1></a>
+      <a href="album.html?album=${array[indexRandom].album.id}" class="text-decoration-none text-white "><h1>${array[indexRandom].album.title}</h1></a>
       <a href="artist.html?artistId=${array[indexRandom].artist.id}" class="text-decoration-none text-white "><p>${array[indexRandom].artist.name}</p></a>
       <p>Ascolta il nuovo singolo di <span><a href="artist.html?artistId=${array[indexRandom].artist.id}" class="text-decoration-none text-white ">${array[indexRandom].artist.name}</a></span></p>
       <div>
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const albumId = event.target.getAttribute("data-album-id");
 
       if (albumId) {
-        window.location.href = `album.html?albumId=${albumId}`;
+        window.location.href = `album.html?album=${albumId}`;
       } else {
         console.error("ID album non trovato!");
       }
