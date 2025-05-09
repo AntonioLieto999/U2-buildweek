@@ -15,7 +15,7 @@ const generateAlbumsCards = function (array) {
     newCol.classList.add("col", "mb-4");
     newCol.innerHTML = `
             <div class="card h-100 d-flex flex-column border-3 bg-transparent text-white border-0 p-2">
-            <img src="${element.album.cover_medium}" class="card-img-top mx-auto" alt="album image" style="width:80px,height:80px">
+            <img src="${element.album.cover_medium}" class="card-img-top mx-auto card-img" alt="album image" style="width:80px,height:80px">
             <div class="card-body d-flex flex-column ">
               <a href="album.html?album=${element.album.id}" class="text-decoration-none text-white "><p class="card-title mb-0 ">${element.album.title}</p></a>
               <a href="artist.html?artistId=${element.artist.id}" class="text-decoration-none text-white-50"><p class="card-text small ">${element.artist.name}</p></a>
@@ -60,7 +60,7 @@ const generateListChart = function (array) {
     <a href="artist.html?artistId=${element.artist.id}" class='text-decoration-none'>
     <div class='d-flex gap-3 rounded-2 ms-3 pb-2 artist-list'>
       <div class='overflow-hidden' style='width: 2.5em'> 
-          <img src="${element.artist.picture_small}" class="img-fluid"> 
+          <img src="${element.artist.picture_small}" class="img-fluid img-piccole"> 
         </div> 
         <div> 
           <a id="album-btn" class="text-decoration-none text-white fw-bold" href="album.html?album=${element.album.id}"> 
@@ -80,6 +80,7 @@ const generateListChart = function (array) {
 const getAlbums = function (searchKeyword) {
   console.log("Sto cercando:", searchKeyword);
   fetch(URL + searchKeyword, {
+    method: "GET",
     headers: {
       "x-rapidapi-key": token,
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -108,31 +109,6 @@ const getAlbums = function (searchKeyword) {
     });
 };
 
-const inputSearch = document.getElementById("inputSearch");
-const searchButton = document.getElementById("searchButton");
-const searchInputWrapper = document.getElementById("searchInputWrapper");
-const spanSearch = document.getElementById("spanSearch");
-
-searchButton.addEventListener("click", function () {
-  const keyword = inputSearch.value.trim();
-  if (!keyword) {
-    console.error("Il campo di ricerca è vuoto!");
-    return;
-  }
-  getAlbums(keyword);
-  searchInputWrapper.classList.toggle("d-none");
-  spanSearch.classList.toggle("d-none");
-  inputSearch.value = "";
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   getAlbums();
-
-  const spanSearch = document.getElementById("spanSearch");
-  const searchIcon = document.getElementById("searchIcon");
-  const searchInputWrapper = document.getElementById("searchInputWrapper");
-  searchIcon.addEventListener("click", function () {
-    searchInputWrapper.classList.toggle("d-none");
-    spanSearch.classList.toggle("d-none");
-  });
 });
