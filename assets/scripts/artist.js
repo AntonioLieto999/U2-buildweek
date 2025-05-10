@@ -1,4 +1,4 @@
-import { token } from "../../token.js";
+import { token } from "./token.js";
 const param = new URLSearchParams(window.location.search);
 const artistId = param.get("artistId");
 

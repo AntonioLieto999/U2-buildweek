@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: "Arial" sans-serif;
+  font-weight: 500;
+  background-color: #121212;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  background-color: #121212;
+}
+
+header {
+  padding: 1rem;
+  background-color: #121212;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 8em;
+  font-style: bold;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  position: relative;
+  height: 160px;
+  border-radius: 12px;
+  padding: 1rem;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-style: bold;
+  z-index: 1;
+}
+
+.card img {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  height: 100px;
+  transform: rotate(25deg);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url(../fonts/CircularStd-Bold.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+
+#barra {
+  font-family: "Arial, sans-serif";
+  max-width: 20%;
+  margin: 0 auto;
+  padding: 0, 5rem;
+  justify-content: end;
+  display: flex;
+  align-items: normal;
+}

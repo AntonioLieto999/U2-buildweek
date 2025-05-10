@@ -3,78 +3,32 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const resultsContainer = document.getElementById("results-container");
 const URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
-const host = "deezerdevs-deezer.p.rapidapi.com";
-const searchValue = document.getElementById("search-bar");
-
-const params = new URLSearchParams(window.location.search);
-// const searchId = params.get("q");
-const searchId = "ligabue";
-
-const arrayAlbum = [];
-const arrayArtist = [];
-
-const createDataArray = async () => {
-  try {
-    const response = await fetch(URL + searchId, {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": token,
-        "x-rapidapi-host": host,
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error("Errore nella fetch");
-    }
-
-    // objData.data.forEach((obj) => {
-    //   const album = obj.album;
-    //   const artist = obj.artist;
-
-    //   console.log(obj.album);
-
-    //   arrayAlbum.push(album);
-    //   arrayArtist.push(artist);
-    // });
-
-    // addAlbums(arrayAlbum);
-    // addArtist(arrayArtist);
-  } catch (error) {
-    console.error("Errore nella fetch:", error);
-  }
-};
-
-const addAlbums = (albums) => {
-  albums.forEach((album) => {});
-  console.log(arrayAlbum);
-};
-const addArtist = (artists) => {
-  artists.forEach((artist) => {
-    // console.log(artist);
-  });
-  console.log(arrayArtist);
-};
-
-// const picsImg = () => {
-//   fetch(URL, {
-//     method: "GET",
-//     headers: {
-//       "x-rapidapi-key": token,
-//       "x-rapidapi-host": host,
-//     },
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error("Network response was not ok");
-//       } else if (response.ok) {
-//         return response.json();
-//       }
-//     })
-//     .then((data) => {});
+// const API_OPTIONS = {
+//   method: "GET",
+//   headers: {
+//     "x-rapidapi-key": "20bdf23e00msh67850135a297dcap159dc5jsn5cee08722670",
+//     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+//   },
 // };
+const picsImg = () => {
+  fetch(URL, {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": token,
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      } else if (response.ok) {
+        return response.json();
+      }
+    })
+    .then((data) => {});
+};
 
 document.addEventListener("DOMContentLoaded", function () {
-  createDataArray();
   const grid = document.getElementById("grid");
 
   const categories = [
@@ -138,7 +92,7 @@ function randomColor() {
   ];
   return colors[Math.floor(Math.random() * colors.length)];
 }
-// searchBtn.addEventListener("click", function () {
-//   const query = searchInput.value.trim();
-//   if (query) fetchSearchResults(query);
-// });
+searchBtn.addEventListener("click", function () {
+  const query = searchInput.value.trim();
+  if (query) fetchSearchResults(query);
+});

@@ -1,4 +1,4 @@
-import { token } from "../../token.js";
+import { token } from "./token.js";
 const URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 fetch(URL, {
   headers: {
