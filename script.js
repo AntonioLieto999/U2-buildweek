@@ -3,18 +3,18 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const resultsContainer = document.getElementById("results-container");
 const URL = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
-// const API_OPTIONS = {
-//   method: "GET",
-//   headers: {
-//     "x-rapidapi-key": "20bdf23e00msh67850135a297dcap159dc5jsn5cee08722670",
-//     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-//   },
-// };
+const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "20bdf23e00msh67850135a297dcap159dc5jsn5cee08722670",
+    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+  },
+};
 const picsImg = () => {
   fetch(URL, {
     method: "GET",
     headers: {
-      "x-rapidapi-key": token,
+      // API key is now handled securely in the backend
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
     },
   })
